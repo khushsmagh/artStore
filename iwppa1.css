@@ -6,10 +6,61 @@ div#topHeaderRow {
 }
 
 .price { 
-
+    color: red;
+    font-weight: bold;
 }
 
-.similarTitle {  }
+/*Inversed navigation bar*/
+#nav_inversed ul {
+    padding-right: 35px;
+}
+
+#nav_inversed ul li{
+    color: white;
+}
+
+#nav_inversed p{
+    color: rgb(197, 195, 195);
+    font-size: 15px;
+}
+
+#nav_inversed a{
+    color: white;
+}
+/*End Inversed navigation bar*/
+
+
+/*Thumbnails css*/
+
+.similarTitle { 
+    border: dotted 0.5px; 
+    padding-top: 1px;
+}   
+
+.similarTitle p a {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.similarTitle img {
+    margin-left: 32px;
+    margin-top: 4px;
+}
+
+.similarTitle p{
+    margin-left: 12px;
+    margin-top: -12px;
+}
+
+.similarTitle button{
+    margin-top: -5px;
+    margin-left: 12px;
+    margin-bottom: 13px;
+    margin-right: -12px;
+}
+/*End Thumbnails*/
+
+    
 
 .cartText { 
 
