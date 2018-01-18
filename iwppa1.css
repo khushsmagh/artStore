@@ -30,8 +30,7 @@ div#topHeaderRow {
 /*End Inversed navigation bar*/
 
 
-/*Thumbnails css*/
-
+/* Start CSS Thumbnails*/
 .similarTitle { 
     border: dotted 0.5px; 
     padding-top: 1px;
@@ -60,7 +59,59 @@ div#topHeaderRow {
 }
 /*End Thumbnails*/
 
-    
+/* Start CSS Panels*/
+#panel_adjustment1 p{
+    font-size: 12px;
+} 
+
+#panel_adjustment1 h3{
+    font-size: 14px;
+    margin-bottom: -1px;
+    margin-top: -1px;
+}
+
+#panel_adjustment1 ul li{
+    padding: 15px;
+    margin-top: 2px;
+}
+
+#panel_adjustment1{
+    margin-top: -600px;
+}
+
+#panel_adjustment2{
+    margin-top: -380px;
+}
+
+#panel_adjustment2 ul li{
+    padding: 7px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#panel_adjustment2 h3{
+    font-size: 14px;
+    margin-bottom: -1px;
+    margin-top: -1px;
+}
+
+#panel_adjustment3 h3{
+    font-size: 14px;
+    margin-bottom: -1px;
+    margin-top: -1px;
+}
+
+#panel_adjustment3 ul li{
+    padding: 7px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#panel_adjustment3 {
+    margin-top: -25px;
+}
+/* End panels*/
+
 
 .cartText { 
 
