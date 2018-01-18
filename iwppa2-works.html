@@ -205,19 +205,18 @@
         <div class="panel-body">
             
             <div class="media">
-            <a  href="#" class="pull-left">
+            <a href="#" class="pull-left">
             <img class="media-object"  src="images/tiny/116010.jpg" alt="..." width="32">
             </a>
-            
             <div class="media-body">
             <p ><a href="#">Artist Holding a Thistle</a></p>
             </div>
+            </div>
             
-         
-            <a  href="#" class="pull-left">
+            <div class="media">
+            <a href="#" class="pull-left">
             <img class="media-object" src="images/tiny/113010.jpg" class="media-object" alt="..." width="32">
             </a>
-    
             <div class="media-body">
             <p ><a href="#">Self-portrait in a Straw Hat</a></p>
             </div>
@@ -225,7 +224,7 @@
             
         
         
-            <strong class="cartText">Subtotal: <span >$1200</span></strong>
+            <strong class="cartText">Subtotal:</strong> <span > $1200 </span>
             <div class="btn-group-xs">
             <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> Edit</button>
             <button class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</button>  
@@ -286,64 +285,78 @@
 
 
 <footer>
-    <h4> About Us</h4>
+    <div class="container">
+        <div class="row">
+    <div class="col-md-3">
+    <h4><span class="glyphicon glyphicon-info-sign"></span> About Us</h4>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div>
 
-
-    <h4> Customer Service</h4>
-    <ul >
+    <div id="footer_adjustment">
+    <div class="col-md-3">
+    <h4><span class="glyphicon glyphicon-earphone"></span> Customer Service</h4>
+    <ul class="list-unstyled">
       <li><a href="#">Delivery Information</a></li>
       <li><a href="#">Privacy Policy</a></li>
       <li><a href="#">Shipping</a></li>
       <li><a href="#">Terms and Conditions</a></li>
-    </ul>           
+    </ul>  
+    </div>         
 
-    <h4> Just Ordered</h4>
-    <div>
-      <a  href="#">
-        <img src="images/tiny/13030.jpg" alt="...">
+    <div class="col-md-3">
+
+    <h4><span class="glyphicon glyphicon-shopping-cart"></span> Just Ordered</h4>
+    <div class="media">
+      <a class="pull-left"  href="#">
+        <img class="media-object" src="images/tiny/13030.jpg" alt="...">
       </a>
-        <p> <a href="#">Arrangement in Grey and Black</a></p>
+
+        <p class="media-body"> <a href="#">Arrangement in Grey and Black</a></p>
         <em>5 minutes ago</em>
     </div>
-    <div >
-      <a  href="#">
-        <img  src="images/tiny/116010.jpg" alt="...">
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object"  src="images/tiny/116010.jpg" alt="...">
       </a>
-        <p ><a href="#">Artist Holding a Thistle</a></p>
+        <p class="media-body"><a href="#">Artist Holding a Thistle</a></p>
         <em>11 minutes ago</em>
     </div>   
-    <div >
+    <div class="media">
       <a class="pull-left" href="#">
-        <img src="images/tiny/113010.jpg" alt="...">
+        <img class="media-object" src="images/tiny/113010.jpg" alt="...">
       </a>
 
-        <p class="similarTitle"><a href="#">Self-portrait in a Straw Hat</a></p>
+        <p class="media-body" class="similarTitle"><a href="#">Self-portrait in a Straw Hat</a></p>
         <em>23 minutes ago</em>
-      </div>
-    </div>  
+      </div> 
     
+    </div>
+</div>
+    
+    
+    <div class="col-md-3">
+    <h4><span class="glyphicon glyphicon-envelope"></span> Contact us</h4>
+    <div class="tight-form-group">
+    <form class="" action="">
+        <input class="form-control" type="text" name="email" placeholder="Enter name ...">
+        
+        <input class="form-control" type="email"  name="email" placeholder="Enter email ...">
 
-    <h4> Contact us</h4>
-    <form >
-        <label  for="name">Name</label>
-        <input type="text" name="email" placeholder="Enter name ...">
+        <textarea class="form-control"  rows="3" placeholder="Enter message ..."></textarea>
 
-
-        <label for="email">Email</label>
-        <input type="email"  name="email" placeholder="Enter email ...">
-
-        <label for="email">Email</label>
-        <textarea  rows="3" placeholder="Enter message ..."></textarea>
-
-      <button type="submit">Submit</button>
-    </form>  
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    </div>
+    </div>
+</div>
+</div>  
 
    
    <div id="copyrightRow">
        <p>All images are copyright to their owners. This is just a hypothetical site
        <span >&copy; 2014 Copyright Art Store</span></p>
    </div>
+ 
 </footer>
   
   <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>

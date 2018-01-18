@@ -80,7 +80,7 @@ div#topHeaderRow {
 }
 
 #panel_adjustment2{
-    margin-top: -380px;
+    margin-top: -370px;
 }
 
 #panel_adjustment2 ul li{
@@ -108,7 +108,7 @@ div#topHeaderRow {
 }
 
 #panel_adjustment3 {
-    margin-top: -25px;
+    margin-top: -20px;
 }
 /* End panels*/
 
@@ -117,15 +117,31 @@ div#topHeaderRow {
 
 }
 
+/* Start CSS footer */
 footer {
-   margin-top: 1em;
+   margin-top: 3em;
    background-color: #E7E7E7;
-
 }
 
-.tight-form-group {  }
+#footer_adjustment ul li{
+    margin-top: 22px;
+}
+
+.tight-form-group input{ 
+    margin-bottom: 6px;
+}
+
+.tight-form-group textarea{
+    margin-bottom: 4px;
+}
+
+.tight-form-group button{
+    width: 263px;
+}
+
 
 #copyrightRow { 
     background-color: #3A3A3A; 
 
 }
+/* End footer */ 
