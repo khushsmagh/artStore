@@ -132,16 +132,27 @@ footer {
 }
 
 .tight-form-group textarea{
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 .tight-form-group button{
     width: 263px;
 }
 
-
 #copyrightRow { 
     background-color: #3A3A3A; 
-
+    height: 55px;
+    color: rgb(129, 129, 129);
+    margin-top: 20px;  
 }
+
+#copyrightRow p{
+    padding-top: 12px;
+    padding-left: 175px;   
+}
+
+#copyrightRow span{
+    padding-right: 175px;
+}
+
 /* End footer */ 
