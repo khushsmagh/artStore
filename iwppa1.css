@@ -75,14 +75,6 @@ div#topHeaderRow {
     margin-top: 2px;
 }
 
-#panel_adjustment1{
-    margin-top: -600px;
-}
-
-#panel_adjustment2{
-    margin-top: -370px;
-}
-
 #panel_adjustment2 ul li{
     padding: 7px;
     margin-top: 2px;
@@ -105,10 +97,6 @@ div#topHeaderRow {
     padding: 7px;
     margin-top: 2px;
     margin-left: 10px;
-}
-
-#panel_adjustment3 {
-    margin-top: -20px;
 }
 /* End panels*/
 
@@ -154,5 +142,10 @@ footer {
 #copyrightRow span{
     padding-right: 175px;
 }
-
 /* End footer */ 
+
+/* Starts Jumbotron */
+.jumbotron{
+    background-image: url('images/whistler-small2.jpg');
+}
+
