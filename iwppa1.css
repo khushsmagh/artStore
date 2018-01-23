@@ -1,5 +1,28 @@
 
-h1 { font-size: 3em; font-weight: bold; margin-top: 0;}
+h1 {
+    font-family: Pacifico, cursive;
+    font-weight: bold;
+    font-size: 33px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: Palanquin; 
+    font-weight: bold;
+}
+
+h3 {
+    font-family: Palanquin;
+    font-weight: bold;
+}
+
+h4{
+    font-family: Palanquin;
+}
+
+
+
 
 div#topHeaderRow {
    font-size: 0.9em;
@@ -10,7 +33,7 @@ div#topHeaderRow {
     font-weight: bold;
 }
 
-/*Inversed navigation bar*/
+/*Inversed navigation bar first page*/
 #nav_inversed ul {
     padding-right: 35px;
 }
@@ -27,10 +50,15 @@ div#topHeaderRow {
 #nav_inversed a{
     color: white;
 }
+
+#mainNavigationRow {
+    font-family: Palanquin;
+    font-weight: bold;
+}
 /*End Inversed navigation bar*/
 
 
-/* Start CSS Thumbnails*/
+/* Start CSS Thumbnails first page*/
 .similarTitle p a {
     font-size: 13px;
     font-weight: bold;
@@ -53,7 +81,7 @@ div#topHeaderRow {
 }
 /*End Thumbnails*/
 
-/* Start CSS Panels*/
+/* Start CSS Panels first page*/
 #panel_adjustment1 p{
     font-size: 12px;
 } 
@@ -95,11 +123,7 @@ div#topHeaderRow {
 /* End panels*/
 
 
-.cartText { 
-
-}
-
-/* Start CSS footer */
+/* Start CSS footer first page */
 footer {
    margin-top: 1em;
    background-color: #E7E7E7;
@@ -138,7 +162,8 @@ footer {
 }
 /* End footer */ 
 
-/* Starts Jumbotron */
+
+/* Starts Jumbotron page */
 .jumbotron{
     background-image: url('images/whistler-small2.jpg');
 }
@@ -147,20 +172,52 @@ footer {
 
 
 
-/* Starts carousel */
+/* Starts Carousel page */
+.navbar-wrapper {
+    position: absolute;
+    margin-top: 20px;
+    right: 0;
+    left: 0;
+    z-index: 20;
+}
+
+#navbar_white a{
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-wrapper nav{
+    background: transparent;
+    padding-right: 45px;
+}
+
+
+.navbar-wrapper > .container {
+    margin-right: 290px;
+}
+
+.navbar-wrapper navbar{
+    padding-right: 50px;
+    padding-left: 2px;
+}
+
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+
+
 .carousel {
-    height: 500px;
+    height: 742px;
     margin-bottom: 60px;
 }
 
 .carousel-caption {
     z-index: 10;
+    padding-bottom: 63px;
 }
   
- 
 .carousel .item {
-    height: 650px; 
-    margin-bottom: 70px;
+    height: 750px; 
 }
 
 .carousel-inner  .item  img {
@@ -172,6 +229,7 @@ footer {
 }
 
 .marketing .col-lg-4 {
+    margin-top: 5px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -184,4 +242,6 @@ footer {
 .marketing button{
     margin-bottom: 60px;
 }
+/* End CSS carousel third page*/
+
 
