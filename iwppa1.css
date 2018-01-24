@@ -192,7 +192,7 @@ footer {
 /* Starts Carousel page */
 .navbar-wrapper {
     position: absolute;
-    margin-top: 20px;
+    margin-top: 7px;
     right: 0;
     left: 0;
     z-index: 20;
@@ -200,7 +200,10 @@ footer {
 
 #navbar_white a{
     color: white;
-    font-weight: bold;
+}
+
+#navbar_white li{
+    font-size: 20px;
 }
 
 .navbar-wrapper nav{
@@ -208,6 +211,9 @@ footer {
     padding-right: 45px;
 }
 
+.navbar-brand{
+    font-size: 40px;
+}
 
 .navbar-wrapper > .container {
     margin-right: 290px;
@@ -230,6 +236,10 @@ footer {
 .carousel-caption {
     z-index: 10;
     padding-bottom: 63px;
+}
+
+.carousel-caption h1{
+    font-size: 40px;
 }
 
 .carousel-caption p{
