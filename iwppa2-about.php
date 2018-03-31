@@ -75,8 +75,8 @@
         <div class="container">
             <div class="jumbotron">
                 <h2 > About Us</h2>
-                    <p> This assignment was created by <em> Pablo Winter.</em> </p>
-                    <p> It was created for COMP 2511 at Mount Royall University. </p>
+                    <p> This is a hypothetical site  created as a term project by <em> Pablo Winter</em> and <em>Khushveen Smagh. </em></p>
+                    <p> It was created for SODV1201 at Bow Valley College taught by Klinger Silva. </p>
                     <button class="btn btn-primary btn-lg"> Learn more</button>
             </div>
         </div>
