@@ -141,7 +141,7 @@
                         <label for="Password" class="col-md-2">Password</label>
                         <div class="col-md-6">
                             <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                <input type="text" name="password" placeholder="Password" class="form-control">
+                                <input type="password" name="password" placeholder="Password" class="form-control">
                             </div>
                         </div>
                     </div>
