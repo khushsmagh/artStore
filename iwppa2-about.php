@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="bootstrap-3.2.0-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://gitlab.com/SODV1201_Wint2018_WebAlpha_GP/IWP_Winter18_GP1.git">
         <title>WIP - Assignment 1</title>
         <!-- Custom styles for this template -->
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
