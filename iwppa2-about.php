@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://gitlab.com/SODV1201_Wint2018_WebAlpha_GP/IWP_Winter18_GP1.git">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <title>WIP - Project</title>
         <!-- Custom styles for this template -->
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
@@ -54,11 +54,10 @@
                                 <ul class="nav navbar-nav">
                                     <li ><a href="iwppa2-index.html">Home</a></li>
                                     <li class="active"><a href="#">About Us</a></li>
-                                    <li> <a href="iwppa2-works.html">Art Works</a></li>
-                                    <li><a href="iwppa2-artists.html">Artists</a></li>
+                                    <li> <a href="iwppa2-works.html">Advanced Search</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            Specials <span class="caret"></span>
+                                            Browse <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Special 1</a></li>
