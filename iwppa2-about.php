@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://gitlab.com/SODV1201_Wint2018_WebAlpha_GP/IWP_Winter18_GP1.git">
-        <title>WIP - Assignment 1</title>
+        <title>WIP - Project</title>
         <!-- Custom styles for this template -->
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Palanquin" rel="stylesheet">
