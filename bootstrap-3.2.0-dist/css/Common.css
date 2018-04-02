@@ -1,3 +1,10 @@
 .dropdowncolor {
     color: black;
 }
+.similar-products {
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}

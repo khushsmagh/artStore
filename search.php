@@ -13,9 +13,9 @@
 
 </head>
 <body>
-<header>
-    <div id="topHeaderRow" >
-        <div class="container">
+<div class="container">
+    <header>
+        <div id="topHeaderRow" >
             <nav class="navbar navbar-default navbar-inverse">
                 <div class="container">
                     <div class="collapse navbar-collapse" id="navbar-1">
@@ -52,41 +52,38 @@
                     </div>
                 </div>
             </nav>
-            <div class="container">
-                <div>
-                    <br>
-                    <h1>Search Results</h1>
-                    <hr class="my-6">
-                </div>
-                <div class="well">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                            Filter by Title:
-                        </label>
-                        <input type="text" class="form-control" >
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Filter by Description:
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            No Filter (show all art works):
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Filter</button>
-                </div>
-            </div>
         </div>
+    </header>
+    <div>
+        <br>
+        <h1>Search Results</h1>
+        <hr class="my-6">
     </div>
+    <div class="well">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Filter by Title:
+            </label>
+            <input type="text" class="form-control" >
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                Filter by Description:
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                No Filter (show all art works):
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Filter</button>
     </div>
-</header>
-</body>
+</div>
 <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
 <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+</body>
 </html>
