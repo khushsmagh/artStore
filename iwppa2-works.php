@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 include 'includes/config.database.php';
 
 //$bookRegister = $connection->query('SELECT * FROM paintings where YearOfWork = 1782')->fetchAll(PDO::FETCH_OBJ);
@@ -74,7 +77,7 @@ $row = $result->fetch();
                                 <ul class="nav navbar-nav">
                                     <li ><a href="iwppa2-index.php">Home</a></li>
                                     <li class="active"><a href="#">About Us</a></li>
-                                    <li> <a href="iwppa2-works.php">Advanced Search</a></li>
+                                    <li> <a href="search.php">Advanced Search</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                             Browse <span class="caret"></span>

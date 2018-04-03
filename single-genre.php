@@ -27,8 +27,8 @@ $result = ViewSingleGenre();
                 <div class="collapse navbar-collapse" id="navbar-2">
                     <ul class="nav navbar-nav">
                         <li ><a href="iwppa2-index.php">Home</a></li>
-                        <li class="active"><a href="#">About Us</a></li>
-                        <li> <a href="iwppa2-works.php">Advanced Search</a></li>
+                        <li class="active"><a href="iwppa2-about.php">About Us</a></li>
+                        <li> <a href="search.php">Advanced Search</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Browse <span class="caret"></span>

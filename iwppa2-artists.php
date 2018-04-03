@@ -57,7 +57,7 @@ include 'view-artists.php';
                         <ul class="nav navbar-nav">
                             <li ><a href="iwppa2-index.php">Home</a></li>
                             <li class="active"><a href="#">About Us</a></li>
-                            <li> <a href="iwppa2-works.php">Advanced Search</a></li>
+                            <li> <a href="search.php">Advanced Search</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     Browse <span class="caret"></span>
@@ -86,121 +86,8 @@ include 'view-artists.php';
     <div class="row">
         <?php
         artistsinfo();
-        ?><!--
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/1.jpg" alt="1">
-                <div class="caption">
-                    <h4> Picasso</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 66</span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/99.jpg" alt="2">
-                <div class="caption">
-                    <h4> Rapahael</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 56 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/19.jpg" alt="3">
-                <div class="caption">
-                    <h4> Van Gogh</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 40 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/95.jpg" alt="4">
-                <div class="caption">
-                    <h4> Boticelli</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 37 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/29.jpg" alt="5">
-                <div class="caption">
-                    <h4> Klimt</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 36 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/2.jpg" alt="6">
-                <div class="caption">
-                    <h4> Matisse</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 34 </span></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/98.jpg" alt="7">
-                <div class="caption">
-                    <h4> Michelangelo</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 32 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/106.jpg" alt="8">
-                <div class="caption">
-                    <h4> Vermeer</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 31 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/97.jpg" alt="9">
-                <div class="caption">
-                    <h4> da Vinci</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 26 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/21.jpg" alt="10">
-                <div class="caption">
-                    <h4> Cezanee</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 25 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/17.jpg" alt="11">
-                <div class="caption">
-                    <h4> Monet</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 25 </span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="images/artists/101.jpg" alt="12">
-                <div class="caption">
-                    <h4> Caravaggio</h4>
-                    <button class="btn btn-info"><span class="glyphicon glyphicon-fire"></span> Sales <span class="badge"> 18 </span></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        ?>
+        
 <div class="container">
     <h4> Artists by Genre </h4>
     <div class="row">
@@ -222,7 +109,7 @@ include 'view-artists.php';
                     <p>Modern</p>
                 </div>
             </div>
-        </div>-->
+        </div>
     </div>
 </div>
 <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>

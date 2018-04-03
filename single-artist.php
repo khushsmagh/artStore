@@ -30,8 +30,8 @@ $row = ViewSingleArtist();
                         </div>
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Advanced Search</a></li>
+                            <li><a href="iwppa2-about.php">About Us</a></li>
+                            <li><a href="search.php">Advanced Search</a></li>
                             <li class="nav-item dropdown">
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse
