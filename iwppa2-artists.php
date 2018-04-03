@@ -21,7 +21,7 @@ include 'view-artists.php';
                 <div class="container">
                     <div class="collapse navbar-collapse" id="navbar-1">
                         <div id="nav_inversed">
-                            <p class="navbar-brand">Welcome to the Art Store,<a href="login.php"> Login</a> or <a href="register.php"> Create an account</a></p>
+                        <p class="navbar-brand">Welcome to the Art Store,<a href="includes/login-form.php"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a></p>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
