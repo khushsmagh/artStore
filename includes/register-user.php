@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
 
 	if(empty($firstName) || empty($lastName) || empty($address) || empty($city) || empty($region) || empty($country) || empty($postalCode) || empty($phone) || empty($email) || empty($password) || empty($cpassword)){
 
-		header("Location:register-user.form.php?Missing=Fields");
+		//header("Location:register-user.form.php?Missing=Fields");
 		echo "missing fields";
 		exit();
 	}
@@ -56,9 +56,10 @@ if(isset($_POST['submit'])){
 			":pass" => $hashpwd
 		));
 
-		// Getting the last ID inserted from the previous query
+		
 		$CustID = $connection->lastInsertId();
 
+		//$max = "SELECT MAX(CustomerID) FROM customers;";
 		$queryCust = "INSERT INTO customers (CustomerID, FirstName, LastName, Address, City, Region, Country, Postal, Phone, Email) Values ('$CustID', :first, :last, :address, :city, :region, :country, :postal, :phone, :email);";
 
 		$sql2 = $connection->prepare($queryCust);

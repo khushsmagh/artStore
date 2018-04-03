@@ -12,7 +12,6 @@
     </head>
     <body>
         <br>
-        <br>
         <div class="container">
             <div class="col-lg-9">
                 <form class="form-horizontal" method="POST" action="register-user.php" id="registration">
@@ -141,7 +140,16 @@
                         <label for="Password" class="col-md-2">Password</label>
                         <div class="col-md-6">
                             <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                <input type="password" name="password" placeholder="Password" class="form-control">
+                                <input type="password" name="password" placeholder="***********" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Password" class="col-md-2">Confirm Password</label>
+                        <div class="col-md-6">
+                            <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                <input type="password" name="cpassword" placeholder="***********" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -149,14 +157,14 @@
                     <div class="form-group">
                         <label class="col-md-2"></label>
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-success" >Register <span class="glyphicon glyphicon-send"></span></button>  
+                            <button type="submit" name="submit" class="btn btn-success" >Register <span class="glyphicon glyphicon-send"></span></button>  
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-2"></label>
                         <div class="col-md-6">
-                            <button class="btn btn-primary" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button>  
+                            <a href="iwppa2-works.php"><button class="btn btn-primary" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a> 
                         </div>
                     </div>
                 </form>
