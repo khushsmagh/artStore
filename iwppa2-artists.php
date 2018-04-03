@@ -200,7 +200,7 @@ include 'view-artists.php';
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="container">
     <h4> Artists by Genre </h4>
     <div class="row">
@@ -222,7 +222,7 @@ include 'view-artists.php';
                     <p>Modern</p>
                 </div>
             </div>
-        </div>-->
+        </div>
     </div>
 </div>
 <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
