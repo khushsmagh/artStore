@@ -15,7 +15,7 @@
         <br>
         <div class="container">
             <div class="col-lg-9">
-                <form class="form-horizontal" method="POST" action="#" id="registration">
+                <form class="form-horizontal" method="POST" action="register-user.php" id="registration">
                     <legend>Personal Information</legend>
                     <div class="form-group">
                         <label class="col-md-2">First Name</label>
