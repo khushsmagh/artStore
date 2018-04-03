@@ -1,3 +1,16 @@
+<?php
+include 'includes/config.database.php';
+
+//$bookRegister = $connection->query('SELECT * FROM paintings where YearOfWork = 1782')->fetchAll(PDO::FETCH_OBJ);
+$sql = "select *  from paintings 
+JOIN artists ON artists.ArtistID = paintings.ArtistID
+JOIN  galleries ON galleries.GalleryID = paintings.GalleryID
+JOIN  paintinggenres ON paintinggenres.PaintingID = paintings.PaintingID
+JOIN  genres ON genres.GenreID = paintinggenres.GenreID
+ where YearOfWork = 1782";
+$result = $connection->query($sql);
+$row = $result->fetch();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,12 +31,12 @@
                         <div class="container">
                             <div class="collapse navbar-collapse" id="navbar-1">
                                 <div id="nav_inversed">
-                                    <p class="navbar-brand">Welcome to the Art Store,<a href="includes/login-form.php"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a></p>
+                                    <p class="navbar-brand">Welcome to the Art Store,<a href="login.php"> Login</a> or <a href="register.php"> Create an account</a></p>
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>                  
+                                        <li><a href="my-account.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                                        <li><a href="view-favorites-list.php"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
+                                        <li><a href="view-cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -45,8 +58,8 @@
                         </form>
      
                     </div>
-                </div>  
-        
+                </div>
+
             </div>  <!-- end logoRow -->
             <div id="mainNavigationRow" >
                 <div class="container">
@@ -54,19 +67,19 @@
                         <div class="container">
                             <div class="collapse navbar-collapse" id="navbar-2">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="iwppa2-index.html">Home</a></li>
-                                    <li><a href="iwppa2-about.html">About Us</a></li>
-                                    <li class="active"> <a href="#">Art Works</a></li>
-                                    <li><a href="iwppa2-artists.html">Artists</a></li>
+                                    <li ><a href="iwppa2-index.php">Home</a></li>
+                                    <li class="active"><a href="#">About Us</a></li>
+                                    <li> <a href="iwppa2-works.php">Advanced Search</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            Specials <span class="caret"></span>
+                                            Browse <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Special 1</a></li>
-                                            <li><a href="#">Special 2</a></li>                   
+                                            <li> <a href="iwppa2-works.php">Art Works</a></li>
+                                            <li><a href="iwppa2-artists.php">Artists</a></li>
+                                            <li><a href = "genres.php">Genres</a></li>
+                                            <li><a href ="iwppa2-works.php">Subjects</a></li>
                                         </ul>
-                                    </li>
                                 </ul> 
                             </div>             
                         </div>
@@ -78,16 +91,19 @@
         <div class="container">
             <div class="main row">
                 <div class="col-md-10">
-                    <h2>Self-portrait in a Straw Hat</h2>
-                    <p>By <a href="#">Louise Elisabeth Lebrun</a></p>
+                    <?php
+                    ?>
+                    <h2><?php echo $row['Title'] ?></h2>
+
+                    <p>By <a href="#"><?php echo $row['FirstName'] , $row['LastName'] ?><!--Louise Elisabeth Lebrun--></a></p>
                     <div class="col-md-5">
-                        <img src="images/113010.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
+                        <img src="images/<?php echo $row['ImageFileName'] ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
                     </div> 
                     <div class="col-md-7">
                         <p>
-                            The painting appears, after cleaning, to be an autograph replica of a picture, the original of which was painted in Brussels in 1782 in free imitation of Rubens's 'Chapeau de Paille', which LeBrun had seen in Antwerp. It was exhibited in Paris in 1782 at the Salon de la Correspondance. LeBrun's original is recorded in a private collection in France. 
-                        </p>
-                        <p class="price">$700</p>
+                            <?php echo $row['Excerpt'] ?>
+                             </p>
+                        <p class="price"><?php echo $row['Cost']?></p>
                         <div class="btn-group">
                             <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-gift"></span> Add to Wish List</a></button>
                             <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Shopping Cart</a></button>
@@ -103,23 +119,23 @@
                                         <table class="table">
                                             <tr>
                                                 <th>Date:</th>
-                                                <td>1782</td>
+                                                <td><?php echo $row['YearOfWork']?></td>
                                             </tr>
                                             <tr>
                                                 <th>Medium:</th>
-                                                <td>Oil on canvas</td>
+                                                <td><?php echo $row['Medium']?></td>
                                             </tr>  
                                             <tr>
                                                 <th>Dimensions:</th>
-                                                <td>98cm x 71cm</td>
+                                                <td><?php echo $row['Width']?>cm x <?php echo $row['Height']?>cm</td>
                                             </tr> 
                                             <tr>
                                                 <th>Home:</th>
-                                                <td><a href="#">National Gallery, London</a></td>
+                                                <td><a href="#"><?php echo $row['GalleryName']?>,<?php echo $row['GalleryCity']?></a></td>
                                             </tr>  
                                             <tr>
                                                 <th>Genres:</th>
-                                                <td><a href="#">Realism</a>, <a href="#">Rococo</a></td>
+                                                <td><a href="#"><?php echo $row['GenreName']?>Realism</a>, <a href="#">Rococo</a></td>
                                             </tr> 
                                             <tr>
                                                 <th>Subjects:</th>
@@ -186,6 +202,8 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                ?>
                 <!--panels-->
                 <div class="col-md-2">
                     <div id="panel_adjustment1">

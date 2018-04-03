@@ -18,7 +18,7 @@
                         <div class="container">
                             <div class="collapse navbar-collapse" id="navbar-1">
                                 <div id="nav_inversed">
-                                    <p class="navbar-brand">Welcome to the Art Store,<a href="#"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a></p>
+                                    <p class="navbar-brand">Welcome to the Art Store,<a href="login.php"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a></p>
                                     <ul class="nav navbar-nav navbar-right">
                                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
                                         <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
@@ -52,16 +52,18 @@
                         <div class="container">
                             <div class="collapse navbar-collapse" id="navbar-2">
                                 <ul class="nav navbar-nav">
-                                    <li ><a href="iwppa2-index.html">Home</a></li>
+                                    <li ><a href="iwppa2-index.php">Home</a></li>
                                     <li class="active"><a href="#">About Us</a></li>
-                                    <li> <a href="iwppa2-works.html">Advanced Search</a></li>
+                                    <li> <a href="iwppa2-works.php">Advanced Search</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                             Browse <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Special 1</a></li>
-                                            <li><a href="#">Special 2</a></li>                   
+                                            <li> <a href="iwppa2-works.php">Art Works</a></li>
+                                            <li><a href="iwppa2-artists.php">Artists</a></li>
+                                            <li><a href = "genres.php">Genres</a></li>
+                                            <li><a href ="iwppa2-works.php">Subjects</a></li>
                                         </ul>
                                     </li>
                                 </ul> 
@@ -74,7 +76,7 @@
         <div class="container">
             <div class="jumbotron">
                 <h2 > About Us</h2>
-                <p> This is a hypothetical site  created as a term project by <em>Parvir Sandhu</em>,<em> Pablo Winter</em> and <em>Khushveen Smagh. </em></p>
+                    <p> This is a hypothetical site  created as a term project by <em> Pablo Winter</em> and <em>Khushveen Smagh. </em></p>
                     <p> It was created for SODV1201 at Bow Valley College taught by Klinger Silva. </p>
                     <button class="btn btn-primary btn-lg"> Learn more</button>
             </div>

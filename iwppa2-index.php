@@ -19,12 +19,19 @@
                             <div id="navbar_white">
                                 <h1><a class="navbar-brand" href="#"> Assign 2 </a></h1>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="iwppa2-index.html"> Home </a></li>
-                                    <li><a href="iwppa2-about.html">About</a></li>
-                                    <li><a href="iwppa2-works.html">Work</a></li>
-                                    <li><a href="iwppa2-artists.html">Artists</a></li>
-                                </ul>
-                            </div>
+                                    <li ><a href="iwppa2-index.php">Home</a></li>
+                                    <li class="active"><a href="#">About Us</a></li>
+                                    <li> <a href="iwppa2-works.php">Advanced Search</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            Browse <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="iwppa2-works.php">Art Works</a></li>
+                                            <li><a href="iwppa2-artists.php">Artists</a></li>
+                                            <li><a href = "genres.php">Genres</a></li>
+                                            <li><a href ="iwppa2-works.php">Subjects</a></li>
+                                        </ul>
                         </div>
                     </div>
                 </nav>
