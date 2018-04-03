@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 include 'includes/config.database.php';
 
 //$bookRegister = $connection->query('SELECT * FROM paintings where YearOfWork = 1782')->fetchAll(PDO::FETCH_OBJ);
