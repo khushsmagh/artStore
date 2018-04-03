@@ -2,7 +2,7 @@
 
 define('DBHOST', 'localhost');
 define('DBNAME', 'art');
-define('DBUSER', 'root');
+define('DBUSER', 'artuser');
 define('DBPASS', 'BowValley');
 define('DBCONNSTRING','mysql:dbname=art;charset=utf8mb4;');
 
