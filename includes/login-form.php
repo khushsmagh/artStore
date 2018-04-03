@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,8 +22,8 @@
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-sm-10">
-                    <form>
+                <div class="col-sm-6">
+                    <form class="form-horizontal" method="POST" action="login.php" id="login">
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -29,18 +36,17 @@
 
                         <div class="form-group">
                             <label class="col-lg-5"></label>
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-primary" >login <span class="glyphicon glyphicon-check"></span></button>  
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-5"></label>
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-default" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button>
+                            <div class="col-md-3">
+                                <button name="submit" type="submit" class="btn btn-primary" >login <span class="glyphicon glyphicon-check"></span></button>  
                             </div>
                         </div>
                     </form>
+                    <div class="form-group">
+                        <label class="col-lg-5"></label>
+                        <div class="col-md-3">
+                            <a href="../iwppa2-works.php"><button class="btn btn-danger" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
