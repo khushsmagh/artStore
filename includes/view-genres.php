@@ -25,7 +25,7 @@ function OutputGenres($row)
 {
     echo '<div class = "col-md-3">';
     echo '<div class = "thumbnail">';
-    echo '<a href = "single-genre.php?GenreID='.$row['GenreID'].'" ><img src="images/artists/1.jpg" alt="1"></a>';
+    echo '<a href = "single-genre.php?GenreID='.$row['GenreID'].'" ><img src="images/genres/square-medium/'.$row['GenreID'].'.jpg" alt="1"></a>';
     echo '<div class = "caption">';
      echo '<h4>';
      echo $row['GenreName'];

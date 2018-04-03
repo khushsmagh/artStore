@@ -66,7 +66,7 @@ $row = ViewSingleArtist();
         </div>
         <div class="row">
             <div class="col-md-3">
-                <img src="images/113010.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
+                <img src="images/artists/medium/<?php echo $row['ArtistID']?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
             </div>
             <div class="col-md-5">
                 <p>
@@ -110,7 +110,7 @@ $row = ViewSingleArtist();
                         <div class="similar-products">
 
 
-                                <img class="img-thumbnail" src="images/thumbs/116010.jpg" alt="...">
+                                <img class="img-thumbnail" src="images/works/square-medium/<?php echo $result['ImageFileName']?>.jpg" alt="...">
                                 <div>
                                     <p class="similarTitle"><a href="#"><b><?php echo $result['Title']?></b></a></p>
                                     <button class="btn btn-primary btn-sm" type="button"><span
