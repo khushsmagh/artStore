@@ -1,5 +1,5 @@
 <?php
-include 'includes/view-single-genre.php';
+include 'includes/view-single-subject.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,13 +55,13 @@ include 'includes/view-single-genre.php';
     </div>
     </header>
     <br><br>
-<div class = "container">
-    <div class = "row">
-        <?php
-        ViewSingleGenre();
-        ?>
+    <div class = "container">
+        <div class = "row">
+            <?php
+            ViewSingleSubject();
+            ?>
+        </div>
     </div>
-</div>
 </div>
 <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
 <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>

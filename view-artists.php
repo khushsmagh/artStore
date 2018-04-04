@@ -7,12 +7,12 @@ function artistsinfo()
         $connection = new PDO(DBCONNSTRING,DBUSER,DBPASS);
         // set the PDO error mode to exception
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "Select Count(PaintingID) AS Sales , paintings.ArtistID ,GalleryID , ImageFileName , Title, ShapeID, MuseumLink,
- AccessionNumber, CopyrightText, Description, Excerpt,YearOfWork, Width, Height, Medium, Cost, MSRP,GoogleLink, 
- GoogleDescription,WikiLink , LastName from paintings
+        $sql = "select count(OrderID) AS Sales, paintings.ArtistID , artists.LastName from paintings
+JOIN orderdetails On orderdetails.PaintingID = paintings.PaintingID
 JOIN artists ON artists.ArtistID = paintings.ArtistID
-               Group By paintings.ArtistID
-               Limit 12 ";
+Group BY ArtistID
+Order BY Sales DESC
+LIMIT 12 ";
         $query = $connection->query($sql);
         while ($row = $query->fetch()) {
             OutputArtist($row);
