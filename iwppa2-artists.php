@@ -87,7 +87,7 @@ include 'view-artists.php';
         <?php
         artistsinfo();
         ?>
-        
+</div>     
 <div class="container">
     <h4> Artists by Genre </h4>
     <div class="row">
@@ -112,6 +112,7 @@ include 'view-artists.php';
         </div>
     </div>
 </div>
+<br>
 <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
 <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 </body>
