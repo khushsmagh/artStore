@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-include 'includes/config.database.php';
+require_once('includes/config.database.php');
+require_once('includes/query.class.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,3 +62,6 @@ include 'includes/config.database.php';
             </div>  <!-- end logoRow -->
 			<?php include('includes/navigation.inc.php'); ?>
         </header>
+        <div class="container"> <!-- main content container -->
+            <div class="main row">
+                <div class="col-md-10"> <!-- left part of main panel -->

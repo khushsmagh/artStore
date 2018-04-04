@@ -1,6 +1,5 @@
 <?php
 include('includes/header.inc.php');
-require_once('includes/query.class.php');
 
 $sql = "SELECT * 
 		  FROM paintings

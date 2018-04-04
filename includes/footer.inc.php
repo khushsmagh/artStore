@@ -1,3 +1,9 @@
+				</div>					<!-- end left part of main panel -->
+<?php include('includes/sidebar.inc.php'); ?>
+
+			</div>
+        </div> <!-- end main content container -->
+
         <footer>
             <div class="container">
                 <div class="row">
