@@ -1,4 +1,7 @@
-<?php include('includes/header.inc.php'); ?>
+<?php 
+$pageTitle = 'Empty Page';
+include('includes/header.inc.php'); 
+?>
 
 empty page
 

@@ -1,5 +1,6 @@
-<?php
-include('includes/header.inc.php');
+<?php 
+$pageTitle = 'Query Test';
+include('includes/header.inc.php'); 
 
 $sql = "SELECT * 
 		  FROM paintings

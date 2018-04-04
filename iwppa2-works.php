@@ -1,6 +1,7 @@
-<?php include('includes/header.inc.php'); ?>
+<?php 
+$pageTitle = 'Detail page';
+include('includes/header.inc.php'); 
 
-<?php
 $sql = "select *  from paintings 
 JOIN artists ON artists.ArtistID = paintings.ArtistID
 JOIN  galleries ON galleries.GalleryID = paintings.GalleryID

@@ -1,7 +1,9 @@
-<?php include('includes/header.inc.php'); ?>
+<?php 
+$pageTitle = 'Galleries';
+include('includes/header.inc.php'); 
 
-        <div class="container"> <!-- main content container -->
-		galleries
-        </div> <!-- end main content container -->
+?>
+
+		<h2>Galleries</h2>
 		
 <?php include('includes/footer.inc.php'); ?>
