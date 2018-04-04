@@ -92,3 +92,17 @@ legend {
 .adtabletd{
 
 }
+/*logon page*/
+.loginlayout{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 3px;
+    border: 1px solid gray;
+    padding: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    background-color: lightgray;
+
+}
+
