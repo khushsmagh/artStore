@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
 	session_start();
 	session_unset();
 	session_destroy();
-	header("Location:../iwppa2-works.php?logout=succesfully");
+	header("Location:login-form.php");
 }
 
 ?>
