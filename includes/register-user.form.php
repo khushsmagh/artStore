@@ -131,7 +131,7 @@
                         <label class="col-sm-2">Email</label>
                         <div class="col-md-6">
                             <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                <input id="pass" type="text" name="email" placeholder="E-mail" data-minLenght="8" data-error="error" required class="form-control">
+                                <input type="text" name="email" placeholder="E-mail" data-minLenght="8" data-error="error" required class="form-control">
                             </div>
                         </div>
                     </div>
