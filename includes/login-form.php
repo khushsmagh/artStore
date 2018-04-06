@@ -27,37 +27,18 @@ session_start();
                     <h2>Please Login</h2><br>
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="Password" class="form-control" name="password" id="pass" aria-describedby="passwordHelp" placeholder="Enter Password">
+                        <input type="Password" class="form-control" name="password" id="pass" placeholder="Enter Password">
                     </div><br>
                     <button name="submit" type="submit" class="btn btn-primary form-control" >Login  <span class="glyphicon glyphicon-check"></span></button><p></p>
-                    <a href="../iwppa2-works.php"><button class="btn btn-danger form-control" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
                 </form>
+                <a class="btn btn-danger form-control" href="../iwppa2-works.php"> Cancel <span class="glyphicon glyphicon-remove-sign"></span></a>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12"></div>
         </div>
-      <!--  <div class="col-lg-4"></div>
-        <div class="col-lg-4">
-            <div class="jumbotron" style="margin-top: 200px">
-                <h2>Please Login</h2><br>
-                <form method="POST" action="login.php">
-                    <div class="form-group">
-                        <label>Email address</label>
-                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="Password" class="form-control" name="password" id="pass" aria-describedby="passwordHelp" placeholder="Enter Password">
-                    </div><br>
-                    <button name="submit" type="submit" class="btn btn-primary form-control" >Login  <span class="glyphicon glyphicon-check"></span></button><p></p>
-                    <a href="../iwppa2-works.php"><button class="btn btn-danger form-control" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
-                </form>
-            </div>
-        </div>
-        <div class="col-lg-4"></div> -->
     </div>
 
 
