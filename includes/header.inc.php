@@ -27,15 +27,17 @@ require_once('includes/query.class.php');
                             <div class="collapse navbar-collapse" id="navbar-1">
                                 <div id="nav_inversed">
                                     <p class="navbar-brand">Welcome to the Art Store,<a href="includes/login-form.php"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a></p>
-                                    <?php if(isset($_SESSION['CustId'])){
-                                            echo '<form action="includes/logout.php" method="POST">
-                                            <button class="btn btn-success" type="submit" name="submit">Logout</button>
-                                        </form>';
-                                        } ?>
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="my-account.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-                                        <li><a href="view-favorites-list.php"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
-                                        <li><a href="view-cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
+                                        <?php if(isset($_SESSION['CustId'])){
+                                            echo '<li><form style="padding-top: 10px;" action="includes/logout.php" method="POST">
+                                            <button class="btn btn-success" type="submit" name="submit">Logout</button>
+                                        </form></li>';
+                                        } ?>
+                                        <?php if(isset($_SESSION['CustId'])){
+                                            echo '<li><a href="update-user.form.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>';
+                                        } ?>
+                                        <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
                                         <li><a href="#"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
                                     </ul>
                                 </div>
