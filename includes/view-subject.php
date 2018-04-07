@@ -1,5 +1,6 @@
 <?php
 include 'config.database.php';
+include 'subject.class.php';
 function ViewSubjects()
 {
     try {
@@ -9,8 +10,11 @@ function ViewSubjects()
         $sql = "Select * from subjects ";
         $query = $connection->query($sql);
         while ($row = $query->fetch()) {
-            OutputSubjects($row);
+            //OutputSubjects($row);
+            $asubjects = new Subjects($row['SubjectID'] , $row['SubjectName']);
+            $subjects[] = $asubjects;
         }
+        return $subjects;
     }
 
     catch(PDOException $e)
@@ -20,7 +24,7 @@ function ViewSubjects()
 
 }
 
-function OutputSubjects($row)
+/*function OutputSubjects($row)
 {
     echo '<div class = "col-md-3">';
     echo '<div class = "thumbnail">';
@@ -33,4 +37,5 @@ function OutputSubjects($row)
     echo '</div>';
     echo '</div>';
 }
+*/
 ?>

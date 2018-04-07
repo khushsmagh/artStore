@@ -1,5 +1,6 @@
 <?php
 include 'config.database.php';
+include 'single-subject.class.php';
 function ViewSingleSubject()
 {
         try {
@@ -12,26 +13,19 @@ Join paintingsubjects ON paintingsubjects.PaintingID = paintings.PaintingID
 where SubjectID =  $getSubject";
             $query = $connection->query($sql);
             while($row = $query->fetch()){
-                OutputSingleSubject($row);
+                $asubjectdetails = new SingleSubject($row['PaintingID'] , $row['ArtistID'] , $row['ImageFileName'] , $row['Title'] , $row['Description'] , $row['Excerpt'] ,
+                    $row['YearOfWork'] , $row['Width'] , $row['Height'] , $row['Medium'] , $row['Cost'] , $row['SubjectID']);
+               // OutputSingleSubject($row);
+               $subjectdetails[] = $asubjectdetails;
             }
+            return $subjectdetails;
         }
 
         catch(PDOException $e)
         {
             echo "Connection failed: " . $e->getMessage();
         }
+
 }
-function OutputSingleSubject($row)
-{
-    echo '<div class = "col-md-3">';
-    echo '<div class = "thumbnail">';
-    echo '<img src="images/works/square-medium/' . $row['ImageFileName'] . '.jpg" alt="1">';
-    echo '<div class = "caption">';
-    echo '<h6>';
-    echo $row['Title'];
-    echo '</h6>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-}
+
 ?>
