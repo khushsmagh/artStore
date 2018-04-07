@@ -105,3 +105,8 @@ legend {
     box-shadow: -1px 4px 26px 11px; rgba(0,0,0,0.75);
     background-color: lightgray;
 }
+.formConatiner-register{
+    border: 1px solid;
+    padding: 35px 60px 90px 60px;
+    background-color: lightgray;
+}
