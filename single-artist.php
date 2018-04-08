@@ -54,7 +54,7 @@ $row = ViewSingleArtist();
                         <div class="similar-products">
 
 
-                                <img class="img-thumbnail" src="images/works/square-medium/<?php echo $result['ImageFileName']?>.jpg" alt="...">
+                            <a href = "iwppa2-works.php?PaintingID=<?php echo $result['PaintingID']?>"><img class="img-thumbnail" src="images/works/square-medium/<?php echo $result['ImageFileName']?>.jpg" alt="..."></a>
                                 <div>
                                     <p class="similarTitle"><a href="#"><b><?php echo $result['Title']?></b></a></p>
                                     <button class="btn btn-primary btn-sm" type="button"><span

@@ -1,5 +1,5 @@
 <?php
-Class SingleSubject{
+Class SingleGenre{
 
     private $paintingID;
     private $artistID;
@@ -12,23 +12,23 @@ Class SingleSubject{
     private $height;
     private $medium;
     private $cost;
-    private $subjectID;
+    private $genreID;
 
     function __construct($paintingID , $artistID , $imageFileName , $paintingTitle ,
-$description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $subjectID )
+                         $description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $genreID)
     {
-    $this->paintingID = $paintingID;
-    $this->artistID = $artistID;
-    $this->imageFIleName = $imageFileName;
-    $this->paintingTitle = $paintingTitle;
-    $this->description = $description;
-    $this->excerpt = $excerpt;
-    $this->yearOfWork = $yearOfWork;
-    $this->width = $width;
-    $this->height = $height;
-    $this->medium = $medium;
-    $this->cost = $cost;
-    $this->subjectID = $subjectID;
+        $this->paintingID = $paintingID;
+        $this->artistID = $artistID;
+        $this->imageFIleName = $imageFileName;
+        $this->paintingTitle = $paintingTitle;
+        $this->description = $description;
+        $this->excerpt = $excerpt;
+        $this->yearOfWork = $yearOfWork;
+        $this->width = $width;
+        $this->height = $height;
+        $this->medium = $medium;
+        $this->cost = $cost;
+        $this->genreID = $genreID;
     }
 
     public function getPaintingID()
@@ -119,9 +119,12 @@ $description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $sub
     /**
      * @return mixed
      */
-    public function getSubjectID()
+    /**
+     * @return mixed
+     */
+    public function getGenreID()
     {
-        return $this->subjectID;
+        return $this->genreID;
     }
 
 }

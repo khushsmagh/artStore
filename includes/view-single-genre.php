@@ -1,5 +1,6 @@
 <?php
-include 'config.database.php';
+include ('config.database.php');
+include ('single-genre.class.php');
 function ViewSingleGenre()
 {
     try {
@@ -12,8 +13,12 @@ Join paintinggenres ON paintinggenres.PaintingID = paintings.PaintingID
 where GenreID =  $getGenre";
         $query = $connection->query($sql);
         while($row = $query->fetch()){
-            OutputSingleGenre($row);
+            //OutputSingleGenre($row);
+            $agenre = new SingleGenre($row['PaintingID'] , $row['ArtistID'] , $row['ImageFileName'] , $row['Title'] , $row['Description'] , $row['Excerpt'] ,
+                $row['YearOfWork'] , $row['Width'] , $row['Height'] , $row['Medium'] , $row['Cost'] , $row['GenreID']);
+            $genre[] = $agenre;
         }
+        return $genre;
     }
 
     catch(PDOException $e)
@@ -23,18 +28,21 @@ where GenreID =  $getGenre";
 
 }
 
-function OutputSingleGenre($row)
+function OutputSingleGenre()
 {
+    $getgenre = ViewSingleGenre();
+    foreach ($getgenre as $genredetails) {
         echo '<div class = "col-md-3">';
         echo '<div class = "thumbnail">';
-        echo '<img src="images/works/square-medium/'.$row['ImageFileName'].'.jpg" alt="1">';
+        echo '<img src="images/works/square-medium/' . $genredetails->getImageFIleName() . '.jpg" alt="1">';
         echo '<div class = "caption">';
         echo '<h4>';
-        echo $row['Title'];
+        echo $genredetails->getPaintingTitle();
         echo '</h4>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
+    }
 }
 
 ?>

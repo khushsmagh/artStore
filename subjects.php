@@ -9,11 +9,7 @@ include ('includes/header.inc.php');
 <div class = "container">
     <div class = "row">
         <?php
-        $row = ViewSubjects();
-        foreach ($row as $subjects)
-        {
-            echo $subjects;
-        }
+      OutputSubjects();
         ?>
     </div>
 </div>

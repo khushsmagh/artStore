@@ -24,23 +24,6 @@ private $subjectName;
     {
         return $this->subjectName;
     }
-
-    public function __toString()
-    {
-        return '
-          <div class = "col-md-3">
-          <div class = "thumbnail">
-        <a href = "single-subject.php?SubjectID='.$this->subjectID.'" ><img src="images/subjects/square-medium/'.$this->subjectID.'.jpg" alt="1"></a>
-        <div class = "caption">
-        <h4>
-        '.$this->subjectName.'
-        </h4>
-        </div>
-        </div>
-        </div>
-        
-        ';
-    }
 }
 
 ?>

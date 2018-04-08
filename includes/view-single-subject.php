@@ -27,5 +27,21 @@ where SubjectID =  $getSubject";
         }
 
 }
-
+function OutputSingleSubject()
+{
+    $getsubject = ViewSingleSubject();
+    foreach ($getsubject as $subject)
+    {
+        echo '<div class = "col-md-3">
+                <div class = "thumbnail">
+                <img src="images/works/square-medium/'.$subject->getImageFIleName().'.jpg" alt="1">
+                <div class = "caption">
+                <h4>
+    '.$subject->getPaintingTitle().'
+                </h4>
+                </div>
+                </div>
+                </div>';
+    }
+}
 ?>
