@@ -15,7 +15,7 @@
                                             <li> <a href="iwppa2-works.php">Art Works</a></li>
                                             <li><a href="iwppa2-artists.php">Artists</a></li>
                                             <li><a href = "genres.php">Genres</a></li>
-                                            <li><a href ="iwppa2-works.php">Subjects</a></li>
+                                            <li><a href = "subjects.php">Subjects</a></li>
                                         </ul>
                                 </ul> 
                             </div>             

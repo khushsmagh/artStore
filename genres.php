@@ -9,12 +9,11 @@ include("includes/header.inc.php");
         </div>
         <div class = "container">
             <?php
-            ViewGenres();
+            OutputGenres();
             ?>
         </div>
       </div>
     </div>
-</div>
         <footer>
             <div class="container">
                 <div class="row">
