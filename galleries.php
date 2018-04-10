@@ -18,6 +18,7 @@ $galleries = $galleries->allGalleries();
 				<h4><?php echo $gallery['GalleryName']; ?></h4>
 				<?php echo $gallery['GalleryCity'].', '.$gallery['GalleryCountry']; ?>
 				<br>
+				<a href="gallery.php?gallery=<?php echo $gallery['GalleryID']; ?>" class="btn btn-info" role="button">Link Button</a>
 				<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-info-sign"></span>
 				Details </button>
 			</div>

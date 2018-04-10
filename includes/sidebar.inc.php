@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="media">
                                     <a href="#" class="pull-left">
-                                    <img class="media-object" src="images/tiny/113010.jpg" class="media-object" alt="media object" width="32">
+                                    <img class="media-object" src="images/tiny/113010.jpg" alt="media object" width="32">
                                     </a>
                                     <div class="media-body">
                                         <p ><a href="#">Self-portrait in a Straw Hat</a></p>
@@ -27,7 +27,7 @@
                                     <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> Edit</button>
                                     <button class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</button>  
                                 </div>
-        
+
                             </div>
                         </div>
                     </div>
