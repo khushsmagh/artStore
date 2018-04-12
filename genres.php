@@ -1,11 +1,12 @@
 <?php
 include 'includes/view-genres.php';
-include("includes/header.inc.php");
+$pageTitle = 'Genres';
+include('includes/header.inc.php');
 ?>
             
                 <h2>Genres</h2>
-            
-            <?php
-            OutputGenres();
-            ?>
-<?php include("includes/footer.inc.php");
+				<div class="row fix">
+					<?php OutputGenres(); ?>
+				</div>
+				
+<?php include('includes/footer.inc.php'); ?>
