@@ -29,7 +29,7 @@ class Query {
 	}
 
 		public function resultCount() {
-		return $this->resultCount;
+		return $this->resultCunt;
 	}
 
 }

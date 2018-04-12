@@ -1,6 +1,6 @@
 <?php
-include 'config.database.php';
-include 'subject.class.php';
+require_once('config.database.php');
+require_once('subject.class.php');
 function ViewSubjects()
 {
     try {

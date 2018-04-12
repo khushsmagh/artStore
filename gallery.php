@@ -6,11 +6,13 @@ if( $_SERVER['REQUEST_METHOD'] == 'GET' ){
 		$galleryID = $_GET['gallery'];
 	}
 }
+
 require_once('includes/gallery.class.php');
 
 $gallery = new Gallery($galleryID);
 $gallery = $gallery->galleryDetail();	
 $pageTitle = $gallery['GalleryName'];
+
 include('includes/header.inc.php'); 
 require_once('includes/googlePlace.class.php');
 ?>

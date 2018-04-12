@@ -1,3 +1,9 @@
+/* fix variable height thumbnails breaking the grid */
+.row.fix {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* Start google fonts*/
 h1 {
     font-family: Pacifico, cursive;
