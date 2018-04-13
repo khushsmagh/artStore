@@ -1,31 +1,25 @@
 <?php 
 $pageTitle = 'Detail page';
-include('includes/header.inc.php'); 
-
-$sql = "select *  from paintings 
-JOIN artists ON artists.ArtistID = paintings.ArtistID
-JOIN  galleries ON galleries.GalleryID = paintings.GalleryID
-JOIN  paintinggenres ON paintinggenres.PaintingID = paintings.PaintingID
-JOIN  genres ON genres.GenreID = paintinggenres.GenreID
- where YearOfWork = 1782";
-$result = $connection->query($sql);
-$row = $result->fetch();
+include ('includes/view-works.php');
+include ('includes/view-reviews.php');
+include('includes/header.inc.php');
+$work = ViewWorks();
 ?>
-                    <h2><?php echo $row['Title'] ?></h2>
+                    <h2><?php echo $work->getPaintingTitle() ?></h2>
 
-                    <p>By <a href="#"><?php echo $row['FirstName'] , $row['LastName'] ?><!--Louise Elisabeth Lebrun--></a></p>
+                    <p>By <a href="#"><?php echo $work->getFirstName() , $work->getLastName() ?><!--Louise Elisabeth Lebrun--></a></p>
                     <div class="col-md-5">
-                        <img src="images/<?php echo $row['ImageFileName'] ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
-                    </div> 
+                        <img src="images/works/medium/<?php echo $work->getImageFIleName() ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
+                    </div>
                     <div class="col-md-7">
                         <p>
-                            <?php echo $row['Excerpt'] ?>
+                            <?php echo $work->getExcerpt() ?>
                              </p>
-                        <p class="price"><?php echo $row['Cost']?></p>
+                        <p class="price"><?php echo $work->getCost()?></p>
                         <div class="btn-group">
                             <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-gift"></span> Add to Wish List</a></button>
                             <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Shopping Cart</a></button>
-                        </div>        
+                        </div>
                         <p>&nbsp;</p>
                          <div id="panel_negative">
                             <div class="panel panel-default">
@@ -37,28 +31,39 @@ $row = $result->fetch();
                                         <table class="table">
                                             <tr>
                                                 <th>Date:</th>
-                                                <td><?php echo $row['YearOfWork']?></td>
+                                                <td><?php echo $work->getYearOfWork()?></td>
                                             </tr>
                                             <tr>
                                                 <th>Medium:</th>
-                                                <td><?php echo $row['Medium']?></td>
-                                            </tr>  
+                                                <td><?php echo $work->getMedium()?></td>
+                                            </tr>
                                             <tr>
                                                 <th>Dimensions:</th>
-                                                <td><?php echo $row['Width']?>cm x <?php echo $row['Height']?>cm</td>
-                                            </tr> 
+                                                <td><?php echo $work->getWidth()?>cm x <?php echo $work->getHeight()?>cm</td>
+                                            </tr>
                                             <tr>
                                                 <th>Home:</th>
-                                                <td><a href="#"><?php echo $row['GalleryName']?>,<?php echo $row['GalleryCity']?></a></td>
-                                            </tr>  
+                                                <td><a href="#"><?php echo $work->getGalleryName()?>,<?php echo $work->getGalleryCity()?></a></td>
+                                            </tr>
                                             <tr>
                                                 <th>Genres:</th>
-                                                <td><a href="#"><?php echo $row['GenreName']?>Realism</a>, <a href="#">Rococo</a></td>
-                                            </tr> 
+                                                <td>
+                                                <?php
+                                                OutputGenre();
+                                                ?>
+                                                <!--<td>
+                                                    <a href="#">
+                                                        </a>-->
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <th>Subjects:</th>
-                                                <td><a href="#">People</a>, <a href="#">Arts</a></td>
-                                            </tr>     
+                                                <td>
+                                                    <?php
+                                                    OutputSubject();
+                                                    ?>
+                                                </td>
+                                            </tr>
                                         </table>
                                    </div>
                                 </div>
@@ -66,7 +71,15 @@ $row = $result->fetch();
                         </div>
                     </div>
                     <p>&nbsp;</p>
-                    <h3>Similar Products </h3> 
+                    <h3>Similar Products </h3>
+<div class = "row fix">
+<?php SimilarProducts(); ?>
+</div>
+<p> </p>
+<h3> Reviews </h3>
+<?php OutputReview(); ?>
+
+<!--
                     <div class="col-md-3">
                         <div class="thumbnail">
                             <div  class="similarTitle">
@@ -79,7 +92,8 @@ $row = $result->fetch();
                                 </div>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
+
                     <div class="col-md-3">
                         <div class="thumbnail">
                             <div  class="similarTitle">
@@ -119,5 +133,6 @@ $row = $result->fetch();
                             </div>
                         </div>
                     </div>
+                    -->
 		
 <?php include('includes/footer.inc.php'); ?>

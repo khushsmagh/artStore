@@ -10,12 +10,13 @@ function ViewSingleGenre()
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "select * from paintings 
 Join paintinggenres ON paintinggenres.PaintingID = paintings.PaintingID
-where GenreID =  $getGenre";
+JOIN  genres ON genres.GenreID = paintinggenres.GenreID
+where genres.GenreID =  $getGenre";
         $query = $connection->query($sql);
         while($row = $query->fetch()){
             //OutputSingleGenre($row);
             $agenre = new SingleGenre($row['PaintingID'] , $row['ArtistID'] , $row['ImageFileName'] , $row['Title'] , $row['Description'] , $row['Excerpt'] ,
-                $row['YearOfWork'] , $row['Width'] , $row['Height'] , $row['Medium'] , $row['Cost'] , $row['GenreID']);
+                $row['YearOfWork'] , $row['Width'] , $row['Height'] , $row['Medium'] , $row['Cost'] , $row['GenreID'] , $row['GenreName']);
             $genre[] = $agenre;
         }
         return $genre;
@@ -34,7 +35,7 @@ function OutputSingleGenre()
     foreach ($getgenre as $genredetails) {
         echo '<div class = "col-md-3">';
         echo '<div class = "thumbnail">';
-        echo '<img src="images/works/square-medium/' . $genredetails->getImageFIleName() . '.jpg" alt="1">';
+        echo '<a href = "iwppa2-works.php?PaintingID='.$genredetails->getPaintingID().'"><img src="images/works/square-medium/' . $genredetails->getImageFIleName() . '.jpg" alt="1"></a>';
         echo '<div class = "caption">';
         echo '<h4>';
         echo $genredetails->getPaintingTitle();

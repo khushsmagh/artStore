@@ -1,8 +1,7 @@
 <?php
-Class SingleGenre{
+Class Works{
 
     private $paintingID;
-    private $artistID;
     private $imageFIleName;
     private $paintingTitle;
     private $description;
@@ -12,14 +11,19 @@ Class SingleGenre{
     private $height;
     private $medium;
     private $cost;
-    private $genreID;
-    private  $genreName;
+    private $artistID;
+    private $firstName;
+    private $lastName;
+    private $galleryID;
+    private $galleryName;
+    private $galleryCity;
 
-    function __construct($paintingID , $artistID , $imageFileName , $paintingTitle ,
-                         $description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $genreID , $genreName)
+
+    function __construct($paintingID , $imageFileName , $paintingTitle ,
+                         $description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost ,  $artistID , $firstName , $lastName , $galleryID
+    ,$galleryName , $galleryCity)
     {
         $this->paintingID = $paintingID;
-        $this->artistID = $artistID;
         $this->imageFIleName = $imageFileName;
         $this->paintingTitle = $paintingTitle;
         $this->description = $description;
@@ -29,8 +33,12 @@ Class SingleGenre{
         $this->height = $height;
         $this->medium = $medium;
         $this->cost = $cost;
-        $this->genreID = $genreID;
-        $this->genreName = $genreName;
+        $this->artistID = $artistID;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->galleryID = $galleryID;
+        $this->galleryName = $galleryName;
+        $this->galleryCity = $galleryCity;
     }
 
     public function getPaintingID()
@@ -38,13 +46,6 @@ Class SingleGenre{
         return $this->paintingID;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getArtistID()
-    {
-        return $this->artistID;
-    }
 
     /**
      * @return mixed
@@ -121,20 +122,49 @@ Class SingleGenre{
     /**
      * @return mixed
      */
-    /**
-     * @return mixed
-     */
-    public function getGenreID()
+    public function getArtistID()
     {
-        return $this->genreID;
+        return $this->artistID;
     }
 
     /**
      * @return mixed
      */
-    public function getGenreName()
+    public function getFirstName()
     {
-        return $this->genreName;
+        return $this->firstName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGalleryID()
+    {
+        return $this->galleryID;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGalleryName()
+    {
+        return $this->galleryName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGalleryCity()
+    {
+        return $this->galleryCity;
     }
 
 }

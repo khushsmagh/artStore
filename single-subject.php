@@ -1,6 +1,6 @@
 <?php
 include('includes/view-single-subject.php');
-$pageTitle = 'Page Title';
+$pageTitle = 'Subject Detail';
 include('includes/header.inc.php');
 ?>
 			<h2>subjectname</h2>
