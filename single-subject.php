@@ -1,18 +1,11 @@
 <?php
-include ('includes/view-single-subject.php');
-include ('includes/header.inc.php');
+include('includes/view-single-subject.php');
+$pageTitle = 'Subject Detail';
+include('includes/header.inc.php');
 ?>
-</div>
-    <div class = "container">
-        <div class = "row">
-            <?php
-            OutputSingleSubject();
-            ?>
-        </div>
-    </div>
-</div>
-</div>
-<script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
-<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+			<h2>subjectname</h2>
+			<div class="row fix">
+				<?php OutputSingleSubject(); ?>
+			</div>
+			
+<?php include('includes/footer.inc.php'); ?>

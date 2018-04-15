@@ -46,33 +46,8 @@ $row = ViewSingleArtist();
                 </div>
             </div>
         </div>
-</div>
-                <?php
-                OutputArtistPainting();
-                ?>
-                <!--<div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="similar-products">
-
-                            <a href = "iwppa2-works.php?PaintingID=<?php //echo $result['PaintingID']?>"><img class="img-thumbnail" src="images/works/square-medium/<?php //echo $result['ImageFileName']?>.jpg" alt="..."></a>
-                                <div>
-                                    <p class="similarTitle"><a href="#"><b><?php //echo $result['Title']?></b></a></p>
-                                    <button class="btn btn-primary btn-sm" type="button"><span
-                                                class="glyphicon glyphicon-info-sign"></span> View
-                                    </button>
-                                    <button class="btn btn-success btn-sm" type="button"><span
-                                                class="glyphicon glyphicon-gift"></span> Wish
-                                    </button>
-                                    <button class="btn btn-info btn-sm" type="button"><span
-                                                class="glyphicon glyphicon-shopping-cart"></span>Cart
-                                    </button>
-                                </div>
-                        </div>
-                    </div>
-                </div>-->
-            </div>
-            </div>
-<script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
-<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+		<div class="row fix">
+			<?php OutputArtistPainting(); ?>
+		</div>
+		
+<?php include('includes/footer.inc.php'); ?>

@@ -13,9 +13,10 @@ Class SingleSubject{
     private $medium;
     private $cost;
     private $subjectID;
+    private $subjectName;
 
     function __construct($paintingID , $artistID , $imageFileName , $paintingTitle ,
-$description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $subjectID )
+$description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $subjectID , $subjectName )
     {
     $this->paintingID = $paintingID;
     $this->artistID = $artistID;
@@ -29,6 +30,7 @@ $description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $sub
     $this->medium = $medium;
     $this->cost = $cost;
     $this->subjectID = $subjectID;
+    $this->subjectName = $subjectName;
     }
 
     public function getPaintingID()
@@ -122,6 +124,14 @@ $description , $excerpt , $yearOfWork  ,$width , $height ,$medium , $cost , $sub
     public function getSubjectID()
     {
         return $this->subjectID;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubjectName()
+    {
+        return $this->subjectName;
     }
 
 }

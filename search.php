@@ -1,11 +1,14 @@
-<?php include("includes/header.inc.php"); ?>
-
-    </div>
+<?php 
+$pageTitle = 'Search';
+include('includes/header.inc.php'); 
+?>
+        <h2>Search</h2>
+</div>
 </div>
 </div>
 
     <div class="container">
-    <div>
+        <div>
         <br>
         <h1>Search Results</h1>
         <hr class="my-6">
@@ -65,9 +68,9 @@
                     echo "<h4>There are " .  $count . " results</h4>";
 
                     foreach($set as $row){
-                    
+                
                         echo '<table class="table table-bordered table-striped table-hover">       
-                                <tr>';
+                            <tr>';
                         echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
                         echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
                         echo '<p>'.$row['Description'].'<br>'. '</p>';
@@ -75,7 +78,7 @@
                             <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
                             <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
                         echo ' 
-                             <tr>
+                            <tr>
                             <table>';  
                     }
                 }
@@ -100,9 +103,9 @@
                 echo "<h4>There are " .  $count . " results</h4>";
 
                 foreach($set as $row){
-                    
+                
                     echo '<table class="table table-bordered table-striped table-hover">       
-                                <tr>';
+                            <tr>';
                     echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
                     echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
                     echo '<p>'.$row['Description'].'<br>'. '</p>';
@@ -110,14 +113,14 @@
                         <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
                         <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
                     echo ' 
-                         <tr>
+                        <tr>
                         <table>';   
                 }
             }
 
-            }
+        }
 
-            if($radio == "noFilter"){
+        if($radio == "noFilter"){
 
             $sql = "SELECT ImageFileName, Title, Description 
             FROM paintings
@@ -138,7 +141,45 @@
                 foreach($set as $row){
 
                     echo '<table class="table table-bordered table-striped table-hover">       
-                                <tr>';
+                            <tr>';
+                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                    echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
+                    echo '<p>'.$row['Description'].'<br>'. '</p>';
+                    echo ' 
+                        <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
+                        <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
+                    echo ' 
+                        <tr>
+                        <table>';      
+                }
+            }
+    
+        }
+
+        else{
+            if(!isset($radio)){
+            
+            $sql = "SELECT * 
+            FROM paintings
+            WHERE Title LIKE '%$userInput%' OR Description LIKE '%$userInput%'  
+            ORDER BY Title";
+
+            $query  = new Query($sql);
+            $set    = $query->resultSet();
+            $count  = $query->resultCount();
+
+            if($count < 1){
+                echo '<h2> "No results found" </h2>';
+                exit();
+            }
+            else{
+
+                echo "<h4>There are " .  $count . " results</h4>";
+
+                foreach($set as $row){
+
+                    echo '<table class="table table-bordered table-striped table-hover">       
+                            <tr>';
                     echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
                     echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
                     echo '<p>'.$row['Description'].'<br>'. '</p>';
@@ -147,56 +188,18 @@
                         <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
                     echo ' 
                          <tr>
-                        <table>';      
+                        <table>'; 
                 }
             }
 
-            }
+           }
+        } 
+    }
 
-            else{
-                if(!isset($radio)){
-                
-                $sql = "SELECT * 
-                FROM paintings
-                WHERE Title LIKE '%$userInput%' OR Description LIKE '%$userInput%'  
-                ORDER BY Title";
-
-                $query  = new Query($sql);
-                $set    = $query->resultSet();
-                $count  = $query->resultCount();
-
-                if($count < 1){
-                    echo '<h2> "No results found" </h2>';
-                    exit();
-                }
-                else{
-
-                    echo "<h4>There are " .  $count . " results</h4>";
-
-                    foreach($set as $row){
-
-                        echo '<table class="table table-bordered table-striped table-hover">       
-                                <tr>';
-                        echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
-                        echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
-                        echo '<p>'.$row['Description'].'<br>'. '</p>';
-                        echo ' 
-                            <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
-                            <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
-                        echo ' 
-                             <tr>
-                            <table>';   
-                    }
-                }
-
-               }
-            } 
-        }
-    
-        ?>
-    </div>
+    ?>
+</div>
 </div>
 <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
 <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 </body>
-</html>
+</html>   
