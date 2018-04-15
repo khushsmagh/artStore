@@ -1,86 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="bootstrap-3.2.0-dist/css/Common.css" type="text/css" rel="stylesheet">
-    <title>WIP - Assignment 1</title>
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Palanquin" rel="stylesheet">
-    <link href="iwppa1.css" rel="stylesheet">
+<?php include("includes/header.inc.php"); ?>
 
-</head>
-<body>
-<div class="container">
-    <header>
-        <div id="topHeaderRow" >
-            <nav class="navbar navbar-default navbar-inverse">
-                <div class="container">
-                    <div class="collapse navbar-collapse" id="navbar-1">
-                        <div id="nav_inversed">
-                            <div class="navbar-header">
-                                <a class="navbar-brand" href="#">Assign 2</a>
-                            </div>
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li class="nav-item dropdown">
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages
-                                        <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li ><a href="#"><span class="dropdowncolor" >Page 1-1</span ></a></li>
-                                        <li ><a href="#"><span class="dropdowncolor" >Page 1-2</span></a></li>
-                                        <li ><a href="#"><span class="dropdowncolor" >Page 1-3</span></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a>Your Full Name Here</a></li>
-                                <form class="navbar-form navbar-right" action="/action_page.php">
+    </div>
+</div>
+</div>
 
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search Painting">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
     <div>
         <br>
         <h1>Search Results</h1>
         <hr class="my-6">
     </div>
+
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <div class="well">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <input class="form-check-input" type="radio" name="radioTitle" id="exampleRadios1" value="title">
             <label class="form-check-label" for="exampleRadios1">
                 Filter by Title:
             </label>
-            <input type="text" class="form-control" >
+            <input type="text" name="user-input" class="form-control">
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <input class="form-check-input" type="radio" name="radioTitle" id="exampleRadios2" value="description">
             <label class="form-check-label" for="exampleRadios2">
                 Filter by Description:
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <input class="form-check-input" type="radio" name="radioTitle" id="exampleRadios2" value="noFilter">
             <label class="form-check-label" for="exampleRadios2">
                 No Filter (show all art works):
             </label>
         </div>
 
-        <button type="submit" class="btn btn-primary">Filter</button>
+        <button type="submit" name="submit" class="btn btn-primary">Filter</button>
+    </div>
+    </form>
+
+    <div class="description">
+        <?php
+
+        if(isset($_POST['submit'])){
+
+            $userInput = $_POST['user-input'];
+            $radio = $_POST['radioTitle'];
+
+
+            if($radio == "title"){
+
+                $sql = "SELECT ImageFileName, Title, Description 
+                FROM paintings WHERE Title LIKE '%$userInput%' 
+                ORDER BY Title";
+
+                $query  = new Query($sql);
+                $set    = $query->resultSet();
+                $count  = $query->resultCount();
+
+                if($count < 1){
+                    echo '<h2> "No results found" </h2>';
+                    exit();
+                }
+                else{
+
+                    echo "<h4>There are " .  $count . " results</h4>";
+
+                    foreach($set as $row){
+                    
+                        echo '<table class="table table-bordered table-striped table-hover">       
+                                <tr>';
+                        echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                        echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
+                        echo '<p>'.$row['Description'].'<br>'. '</p>';
+                        echo ' 
+                            <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
+                            <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
+                        echo ' 
+                             <tr>
+                            <table>';  
+                    }
+                }
+
+            }
+
+            if($radio == "description"){
+
+            $sql = "SELECT ImageFileName, Description, Title 
+            FROM paintings WHERE Description LIKE '%$userInput%'";
+
+            $query  = new Query($sql);
+            $set    = $query->resultSet();
+            $count  = $query->resultCount();
+
+            if($count < 1){
+                echo '<h2> "No results found" </h2>';
+                exit();
+            }
+            else{
+
+                echo "<h4>There are " .  $count . " results</h4>";
+
+                foreach($set as $row){
+                    
+                    echo '<table class="table table-bordered table-striped table-hover">       
+                                <tr>';
+                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                    echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
+                    echo '<p>'.$row['Description'].'<br>'. '</p>';
+                    echo ' 
+                        <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
+                        <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
+                    echo ' 
+                         <tr>
+                        <table>';   
+                }
+            }
+
+            }
+
+            if($radio == "noFilter"){
+
+            $sql = "SELECT ImageFileName, Title, Description 
+            FROM paintings
+            ORDER BY Title";
+
+            $query  = new Query($sql);
+            $set    = $query->resultSet();
+            $count  = $query->resultCount();
+
+            if($count < 1){
+                echo '<h2> "No results found" </h2>';
+                exit();
+            }
+            else{
+
+                echo "<h4>There are " .  $count . " results</h4>";
+
+                foreach($set as $row){
+
+                    echo '<table class="table table-bordered table-striped table-hover">       
+                                <tr>';
+                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                    echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
+                    echo '<p>'.$row['Description'].'<br>'. '</p>';
+                    echo ' 
+                        <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
+                        <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
+                    echo ' 
+                         <tr>
+                        <table>';      
+                }
+            }
+
+            }
+
+            else{
+                if(!isset($radio)){
+                
+                $sql = "SELECT * 
+                FROM paintings
+                WHERE Title LIKE '%$userInput%' OR Description LIKE '%$userInput%'  
+                ORDER BY Title";
+
+                $query  = new Query($sql);
+                $set    = $query->resultSet();
+                $count  = $query->resultCount();
+
+                if($count < 1){
+                    echo '<h2> "No results found" </h2>';
+                    exit();
+                }
+                else{
+
+                    echo "<h4>There are " .  $count . " results</h4>";
+
+                    foreach($set as $row){
+
+                        echo '<table class="table table-bordered table-striped table-hover">       
+                                <tr>';
+                        echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                        echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
+                        echo '<p>'.$row['Description'].'<br>'. '</p>';
+                        echo ' 
+                            <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
+                            <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
+                        echo ' 
+                             <tr>
+                            <table>';   
+                    }
+                }
+
+               }
+            } 
+        }
+    
+        ?>
     </div>
 </div>
 <script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
