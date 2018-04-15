@@ -2,7 +2,7 @@
 $pageTitle = 'Search';
 include('includes/header.inc.php'); 
 ?>
-        <h2>Search</h2>
+
 </div>
 </div>
 </div>
