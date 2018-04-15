@@ -1,7 +1,5 @@
 <?php
 $pageTitle = 'Your cart';
-require_once('includes/cart.class.php');
-$myCart = new Cart();
 
 include('includes/header.inc.php');
 

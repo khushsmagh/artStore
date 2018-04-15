@@ -51,15 +51,32 @@ function OutputArtistPainting()
        <a href = "iwppa2-works.php?PaintingID='.$showpainting->getPaintingID().'"><img class="img-thumbnail" src="images/works/square-medium/'.$showpainting->getImageFIleName().'.jpg" alt="..."></a>
         <div>
         <p class="similarTitle"><a href="#"><b>'.$showpainting->getPaintingTitle().'</b></a></p>
-        <button class="btn btn-primary btn-sm" type="button"><span
-                class="glyphicon glyphicon-info-sign"></span> View
+        <div class="row">
+
+		<div class="col-md-4">
+
+        <button class="btn btn-primary btn-sm" type="button">
+			<span class="glyphicon glyphicon-info-sign"></span> View
         </button>
-        <button class="btn btn-success btn-sm" type="button"><span
-                class="glyphicon glyphicon-gift"></span> Wish
+		</div>
+		<div class="col-md-4">
+
+        <button class="btn btn-success btn-sm" type="button">
+			<span class="glyphicon glyphicon-gift"></span> Wish
         </button>
-        <button class="btn btn-info btn-sm" type="button"><span
-                class="glyphicon glyphicon-shopping-cart"></span>Cart
-        </button>
+		</div>
+		<div class="col-md-4">
+
+		<form action="add-to-cart.php" method="POST" class="add-button">
+			<button class="btn btn-info btn-sm add-button" type="submit">
+				  <input type="hidden" name="paintingID" value="'.$showpainting->getPaintingID().'" >
+
+			<span class="glyphicon glyphicon-shopping-cart"></span>Cart
+			</button>
+		</form>
+		</div>
+		</div>
+
         </div>
         </div>
         </div>';

@@ -4,6 +4,8 @@ session_start();
 require_once('includes/config.database.php');
 require_once('includes/config.googleAPI.php');
 require_once('includes/query.class.php');
+require_once('includes/cart.class.php');
+$myCart = new Cart();
 
 ?>
 <!DOCTYPE html>
