@@ -13,7 +13,6 @@ fieldset {
     margin: 1px;
     border: 1px solid gray;
     padding: 1px;
-    position: relative;
     background-color: #f4f3f1;
 }
 
@@ -29,7 +28,7 @@ legend {
 .advancedBorder{
     margin-left: 30px;
     margin-right: 30px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
     border: 1px solid gray;
     padding: 5px;
     padding-bottom: 10px;
@@ -110,3 +109,30 @@ legend {
     padding: 35px 60px 90px 60px;
     background-color: lightgray;
 }
+/* edit art work */
+.edit-art-form{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.edit-art-Border {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    background-color: lightgray;
+}
+.formConatiner-update{
+    margin-left: 50px;
+}
+.buttonupdate{
+    padding-left: 51px;
+    padding-right: 50px;
+}
+.button2update{
+    margin-left: 11px;
+}
+
