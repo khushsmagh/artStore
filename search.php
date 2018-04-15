@@ -3,16 +3,8 @@ $pageTitle = 'Search';
 include('includes/header.inc.php'); 
 ?>
 
-</div>
-</div>
-</div>
-
-    <div class="container">
-        <div>
-        <br>
-        <h1>Search Results</h1>
+        <h2>Search Results</h2>
         <hr class="my-6">
-    </div>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <div class="well">
@@ -40,7 +32,6 @@ include('includes/header.inc.php');
     </div>
     </form>
 
-    <div class="description">
         <?php
 
         if(isset($_POST['submit'])){
@@ -197,9 +188,4 @@ include('includes/header.inc.php');
     }
 
     ?>
-</div>
-</div>
-<script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
-<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-</body>
-</html>   
+<?php include('includes/footer.inc.php'); ?>
