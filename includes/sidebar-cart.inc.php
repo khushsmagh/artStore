@@ -1,5 +1,8 @@
 <?php
+
 	if(is_array($myCart->cartContent())){
+		$myCart = $myCart->cartContent();
+		if(count($myCart) > 0){
 ?>
                     <div id="panel_adjustment1">
                         <div class="panel panel-primary">
@@ -7,11 +10,12 @@
                                 <h3 >Cart </h3>
                             </div>
                             <div class="panel-body">
-<?php 		foreach($myCart->cartContent() as $cartItem) {
+<?php 		foreach($myCart as $cartItem) {
 			echo $cartItem->paintingID();
 			echo '<br>';
-		}	
-?>
+			}	
+		
+		?>
 							<div class="media">
                                     <a href="#" class="pull-left">
                                     <img class="media-object"  src="images/tiny/116010.jpg" alt="media" width="32">
@@ -40,6 +44,7 @@
 
 
 <?php
+		}
 	}
 
 ?>

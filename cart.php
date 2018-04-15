@@ -46,7 +46,6 @@ include('includes/header.inc.php');
 						</div>
 						<div class="row panel">
 							<div class="col-md-1">
-							col 3
 							</div>
 							<div class="col-md-2">
 							col 3
@@ -55,7 +54,7 @@ include('includes/header.inc.php');
 							col 3
 							</div>
 							<div class="col-md-5">
-							col 3
+							<a href="delete-cart-item.php?cartItem='.$rowCount.'" onclick="return confirm(\'Are you sure?\')"> delete</a>
 							</div>
 						</div>';
 					}	
