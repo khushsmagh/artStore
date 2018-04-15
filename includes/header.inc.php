@@ -37,7 +37,7 @@ require_once('includes/query.class.php');
                                             echo '<li><a href="update-user.form.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>';
                                         } ?>
                                         <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
+                                        <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
                                         <li><a href="#"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
                                     </ul>
                                 </div>
