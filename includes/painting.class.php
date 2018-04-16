@@ -6,20 +6,25 @@ class Painting {
 	protected $paintingID;
 	protected $imageFileName;
 	protected $title;
+	protected $price;
+	protected $artist;
 	
 	function __construct($pID) {
 
 		if(is_numeric($pID)){
 			$sql = "SELECT * 
 					  FROM paintings
-					 WHERE PaintingID = $pID";
-
+					  JOIN artists ON paintings.ArtistID = artists.ArtistID
+					 WHERE PaintingID = $pID ";
+					
 			$query 	= new Query($sql);
 			$result = $query->resultSet()[0];
 
 			$this->paintingID = $result['PaintingID'];
 			$this->imageFileName = $result['ImageFileName'];
 			$this->title = $result['Title'];
+			$this->price = $result['Cost'];
+			$this->artist = $result['FirstName'].' '.$result['LastName'];
 		}
 	}
 
@@ -73,8 +78,12 @@ class Painting {
 		echo '<img class="media-object" src="images/works/square-tiny/'.$this->imageFileName.'.jpg" alt="'.$this->title.'" width="32">';
 	}
 
-	public function mattID() {
-		return $this->mattID;
+	public function price() {
+		return $this->price;
+	}
+
+	public function artist() {
+		return $this->artist;
 	}
 	
 }

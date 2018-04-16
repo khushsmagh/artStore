@@ -32,5 +32,32 @@ class CartItem {
 	public function mattID() {
 		return $this->mattID;
 	}
-	
+
+	public function getPrice() {
+		
+		$totalPrice = 0;
+
+		$sql = "SELECT Cost 
+				  FROM paintings
+				 WHERE PaintingID = $this->paintingID";
+		$query 	= new Query($sql);
+		$resultSet = $query->resultSet();
+		$totalPrice = $totalPrice + $resultSet[0][0];
+
+		$sql = "SELECT Price 
+				  FROM typesframes
+				 WHERE FrameID = $this->frameID";
+		$query 	= new Query($sql);
+		$resultSet = $query->resultSet();
+		$totalPrice = $totalPrice + $resultSet[0][0];
+
+		$sql = "SELECT Price 
+				  FROM typesglass
+				 WHERE GlassID = $this->glassID";
+		$query 	= new Query($sql);
+		$resultSet = $query->resultSet();
+		$totalPrice = $totalPrice + $resultSet[0][0];
+		
+		return $totalPrice;
+	}
 }

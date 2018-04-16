@@ -22,14 +22,17 @@ require_once('includes/types.matt.class.php');
 					<div class="col-md-1">
 					item
 					</div>
-					<div class="col-md-2">
-					painting ID
-					</div>
-					<div class="col-md-3">
-					col 3
+					<div class="col-md-1">
+					ID
 					</div>
 					<div class="col-md-5">
-					col 3
+					title
+					</div>
+					<div class="col-md-3">
+					artist
+					</div>
+					<div class="col-md-2">
+					price
 					</div>
 				</div>
 <?php
@@ -42,48 +45,53 @@ require_once('includes/types.matt.class.php');
 							<div class="col-md-1">
 							<?php echo $rowCount; ?>
 							</div>
-							<div class="col-md-2">
+							<div class="col-md-1">
 							<?php echo $cartItem->paintingID(); ?>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-5">
 							<?php $painting->outputMiniature(); ?>
 							</div>
-							<div class="col-md-6">
-							abc
+							<div class="col-md-3">
+							<?php echo $painting->artist(); ?>
+							</div>
+							<div class="col-md-2 text-right">
+							<?php echo '$ '.number_format($painting->price(),2); ?>
 							</div>
 						</div>
 						<div class="row panel">
 							<div class="col-md-8">
-							<form>
+							<form action="update-cart-item.php" method="POST" >
+								<input type="hidden" name="cartItem" value="<?php echo $rowCount; ?>">
+								<input type="hidden" name="paintingID" value="<?php echo $cartItem->paintingID(); ?>">
 								<div class="form-group">
 									<label>Frame</label>
-									<select class="form-control frame">
+									<select name="frame" class="form-control frame">
 									<?php
 									$frames = new TypesFrames;
-									$frames->optionList(7);
+									$frames->optionList($cartItem->frameID());
 									?>
 									</select>
 								</div>
 								<div class="form-group">
 									<label>Glass</label>
-									<select class="form-control glass">
+									<select name="glass" class="form-control glass">
 									<?php
 									$glass = new TypesGlass;
-									$glass->optionList(7);
+									$glass->optionList($cartItem->glassID());
 									?>
 									</select>
 								</div>
 
 								<div class="form-group">
 									<label>Matt</label>
-									<select class="form-control matt" onclick="changeBackground()">
+									<select name="matt" class="form-control matt" onclick="changeBackground()">
 									<?php
 									$matt = new TypesMatt;
-									$matt->optionList(7);
+									$matt->optionList($cartItem->mattID());
 									?>
 									</select>
 								</div>
-
+								<button type="submit" class="btn btn-default">Update</button>
 								</form>
 							</div>
 							<div class="col-md-4">
