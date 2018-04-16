@@ -30,6 +30,10 @@ $myCart = new Cart();
                                 <div id="nav_inversed">
                                     <p class="navbar-brand">Welcome to the Art Store,<a href="includes/login-form.php"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a></p>
                                     <ul class="nav navbar-nav navbar-right">
+                                        <?php if(isset($_SESSION["welcome"])){
+                                            $welcome = $_SESSION["welcome"];
+                                            echo "<li><h4 style='color: #ccff99; padding-right: 17px; padding-top: 6px;'>$welcome</h4></li>";
+                                        }?>
                                         <?php if(isset($_SESSION['CustId'])){
                                             echo '<li><form style="padding-top: 10px;" action="includes/logout.php" method="POST">
                                             <button class="btn btn-success" type="submit" name="submit">Logout</button>
@@ -60,6 +64,9 @@ $myCart = new Cart();
                                     </div>
                             </div>
                         </form>
+                        <?php 
+                        unset($_SESSION["welcome"]);
+                        ?>
      
                     </div>
                 </div>
