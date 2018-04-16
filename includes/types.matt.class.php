@@ -32,7 +32,7 @@ class TypesMatt {
 		foreach($this->resultSet as $result){
 			echo '<option ';
 			if ($result['MattID'] == $this->active) echo 'selected ';
-			echo 'class="#'.$result['ColorCode'].'" value="'.$result['MattID'].'">'.$result['Title'].' - '.$result['ColorCode'].'</option>';
+			echo 'class="#'.$result['ColorCode'].'" value="'.$result['MattID'].'">'.$result['Title'].'</option>';
 		}
 	}
 }

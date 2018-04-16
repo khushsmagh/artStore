@@ -32,7 +32,7 @@ class TypesGlass {
 		foreach($this->resultSet as $result){
 			echo '<option ';
 			if ($result['GlassID'] == $this->active) echo 'selected ';
-			echo 'value="'.$result['GlassID'].'">'.$result['Title'].' - '.$result['Description'].' - '.$result['Price'].'</option>';
+			echo 'value="'.$result['GlassID'].'">'.$result['Title'].' - '.$result['Description'].' - $'.number_format($result['Price'],2).'</option>';
 		}
 	}
 }

@@ -32,7 +32,7 @@ class TypesFrames {
 		foreach($this->resultSet as $result){
 			echo '<option ';
 			if ($result['FrameID'] == $this->active) echo 'selected ';
-			echo 'value="'.$result['FrameID'].'">'.$result['Title'].' - '.$result['Color'].' - '.$result['Syle'].' - '.$result['Price'].'</option>';
+			echo 'value="'.$result['FrameID'].'">'.$result['Title'].' - '.$result['Color'].' - '.$result['Syle'].' - $'.number_format($result['Price'],2).'</option>';
 		}		
 	}
 }

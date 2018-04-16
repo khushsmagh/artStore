@@ -53,12 +53,7 @@ require_once('includes/types.matt.class.php');
 							</div>
 						</div>
 						<div class="row panel">
-							<div class="col-md-1">
-							</div>
-							<div class="col-md-1">
-							col 3
-							</div>
-							<div class="col-md-4">
+							<div class="col-md-8">
 							<form>
 								<div class="form-group">
 									<label>Frame</label>
@@ -91,7 +86,7 @@ require_once('includes/types.matt.class.php');
 
 								</form>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-4">
 							<a href="delete-cart-item.php?cartItem=<?php echo $rowCount; ?>" onclick="return confirm('Are you sure?')"> delete</a>
 
 							</div>
