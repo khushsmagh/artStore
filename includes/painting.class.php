@@ -58,8 +58,18 @@ class Painting {
 		<?php
 	}
 
-	public function frameID() {
-		return $this->frameID;
+	public function outputMiniature() {
+		?>
+		<div class="media">
+			<a href="iwppa2-works.php?PaintingID=<?php echo $this->paintingID; ?>" class="pull-left">
+				<img class="media-object"  src="images/works/square-tiny/<?php echo $this->imageFileName; ?>.jpg" alt="media" width="32">
+			</a>
+			<div class="media-body">
+				<p ><a href="iwppa2-works.php?PaintingID=<?php echo $this->paintingID; ?>"><?php echo $this->title; ?></a></p>
+			</div>
+		</div>
+		<?php
+		
 	}
 
 	public function glassID() {
