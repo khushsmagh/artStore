@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,6 +34,12 @@
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                     <input type="text" name="firstName" placeholder="First Name" class="form-control">
                                 </div>
+                                <?php
+                                if (isset($_SESSION["errorName"])) {
+                                    $errorName = $_SESSION["errorName"];
+                                    echo "<span style='color: red;'>$errorName</span>";
+                                }
+                               ?>
                             </div>
                         </div>
 
@@ -37,6 +49,12 @@
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                     <input type="text" name="lastName" placeholder="Last Name" class="form-control">
                                 </div>
+                                <?php
+                                if (isset($_SESSION["errorName"])) {
+                                    $errorName = $_SESSION["errorName"];
+                                    echo "<span style='color: red;'>$errorName</span>";
+                                }
+                               ?>
                             </div>
                         </div>
 
@@ -44,7 +62,7 @@
                             <label class="col-md-2">Address</label>
                             <div class="col-md-6">
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                    <input type="text" name="address" placeholder="Address" class="form-control">
+                                    <input type="text" name="address" placeholder="Address" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +115,7 @@
                             <label class="col-md-2">Region</label>
                             <div class="col-md-6">
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                    <input type="text" name="region" placeholder="Region" class="form-control">
+                                    <input type="text" name="region" placeholder="Region" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -121,6 +139,12 @@
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                     <input type="text" name="postal" placeholder="Postal Code" class="form-control">
                                 </div>
+                                <?php
+                                if (isset($_SESSION["errorPostal"])) {
+                                    $errorPostal = $_SESSION["errorPostal"];
+                                    echo "<span style='color: red;'>$errorPostal</span>";
+                                }
+                               ?>
                             </div>
                         </div>
 
@@ -130,6 +154,12 @@
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
                                     <input type="text" name="phone" placeholder="Phone" class="form-control">
                                 </div>
+                                <?php
+                                if (isset($_SESSION["errorPhone"])) {
+                                    $errorPhone = $_SESSION["errorPhone"];
+                                    echo "<span style='color: red;'>$errorPhone</span>";
+                                }
+                               ?>
                             </div>
                         </div>
 
@@ -139,35 +169,57 @@
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                                     <input type="text" name="email" placeholder="E-mail" data-minLenght="8" data-error="error" required class="form-control">
                                 </div>
+                                <?php
+                                if (isset($_SESSION["errorEmail"])) {
+                                    $errorEmail = $_SESSION["errorEmail"];
+                                    echo "<span style='color: red;'>$errorEmail</span>";
+                                }
+                               ?>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="Password" class="col-md-2">Password</label>
+                            <label class="col-md-2">Password</label>
                             <div class="col-md-6">
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                     <input type="password" name="password" placeholder="***********" class="form-control">
                                 </div>
+                                <?php
+                                if (isset($_SESSION["errorPassword"])) {
+                                    $errorPassword = $_SESSION["errorPassword"];
+                                    echo "<span style='color: red;'>$errorPassword</span>";
+                                }
+                               ?>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="Password" class="col-md-2">Confirm Password</label>
+                            <label class="col-md-2">Confirm Password</label>
                             <div class="col-md-6">
                                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                     <input type="password" name="cpassword" placeholder="***********" class="form-control">
                                 </div>
+                                <?php
+                                if (isset($_SESSION["errorPassword"])) {
+                                    $errorPassword = $_SESSION["errorPassword"];
+                                    echo "<span style='color: red;'>$errorPassword</span>";
+                                }
+                               ?>
                             </div>
                         </div>
-
                         <div>
                             <label class="col-md-2"></label>
                             <div class="col-md-6">
                                 <button type="submit" name="submit" class="btn btn-success" >Register <span class="glyphicon glyphicon-send"></span></button>
-                                <a href="../iwppa2-works.php"><button class="btn btn-primary" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
                             </div>
                         </div>
-                </form>
+                    </form>
+                    <div class="form-group">
+                        <label class="col-md-2"></label>
+                        <div class="col-md-6">
+                            <a href="../iwppa2-index.php" class="btn btn-primary">Cancel <span class="glyphicon glyphicon-remove-sign"></span></a> 
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="col-lg-2"></div>
@@ -176,4 +228,11 @@
     </body>
     <script src="../bootstrap-3.2.0-dist/js/jQuery.js"></script>
     <script src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <?php
+    unset($_SESSION["errorPassword"]);
+    unset($_SESSION["errorName"]);
+    unset($_SESSION["errorPhone"]);
+    unset($_SESSION["errorPostal"]);
+    unset($_SESSION["errorEmail"]);
+    ?>
 </html>

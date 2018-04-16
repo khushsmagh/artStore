@@ -31,5 +31,15 @@ class Cart {
 	public function cartContent() {
 		return $this->cartContent;
 	}
+
+	public function deleteItem($cartItem) {
+		if(count($this->cartContent) >= $cartItem){
+			unset($this->cartContent[$cartItem -1]);
+			$this->cartContent = array_values($this->cartContent);
+			$cookie_name = "YourCart";
+			$cookie_value = serialize($this->cartContent);
+			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");		
+		}
+	}
 	
 }

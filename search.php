@@ -1,29 +1,34 @@
-<?php 
-$pageTitle = 'Search';
-include('includes/header.inc.php'); 
-?>
+<?php include("includes/header.inc.php"); ?>
 
-        <h2>Search Results</h2>
+    </div>
+</div>
+</div>
+
+    <div class="container">
+    <div>
+        <br>
+        <h1>Search Results</h1>
         <hr class="my-6">
+    </div>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <div class="well">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="radioTitle" id="exampleRadios1" value="title">
-            <label class="form-check-label" for="exampleRadios1">
+            <input class="form-check-input" type="radio" name="radioTitle" value="title" checked>
+            <label class="form-check-label">
                 Filter by Title:
             </label>
             <input type="text" name="user-input" class="form-control">
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="radioTitle" id="exampleRadios2" value="description">
-            <label class="form-check-label" for="exampleRadios2">
+            <input class="form-check-input" type="radio" name="radioTitle" value="description">
+            <label class="form-check-label">
                 Filter by Description:
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="radioTitle" id="exampleRadios2" value="noFilter">
-            <label class="form-check-label" for="exampleRadios2">
+            <input class="form-check-input" type="radio" name="radioTitle" value="noFilter">
+            <label class="form-check-label">
                 No Filter (show all art works):
             </label>
         </div>
@@ -32,6 +37,7 @@ include('includes/header.inc.php');
     </div>
     </form>
 
+    <div class="description">
         <?php
 
         if(isset($_POST['submit'])){
@@ -59,18 +65,18 @@ include('includes/header.inc.php');
                     echo "<h4>There are " .  $count . " results</h4>";
 
                     foreach($set as $row){
-                
+                    
                         echo '<table class="table table-bordered table-striped table-hover">       
-                            <tr>';
-                        echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                                <tr>';
+                        echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '</th>';   
                         echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
                         echo '<p>'.$row['Description'].'<br>'. '</p>';
                         echo ' 
                             <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
                             <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
                         echo ' 
-                            <tr>
-                            <table>';  
+                             </tr>
+                            </table>';  
                     }
                 }
 
@@ -94,27 +100,28 @@ include('includes/header.inc.php');
                 echo "<h4>There are " .  $count . " results</h4>";
 
                 foreach($set as $row){
-                
+                    
                     echo '<table class="table table-bordered table-striped table-hover">       
-                            <tr>';
-                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                                <tr>';
+                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '</th>';   
                     echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
                     echo '<p>'.$row['Description'].'<br>'. '</p>';
                     echo ' 
                         <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
                         <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
                     echo ' 
-                        <tr>
-                        <table>';   
+                         </tr>
+                        </table>';   
                 }
             }
 
-        }
+            }
 
-        if($radio == "noFilter"){
+            if($radio == "noFilter"){
 
             $sql = "SELECT ImageFileName, Title, Description 
             FROM paintings
+            WHERE Title LIKE '%$userInput%' OR Description LIKE '%$userInput%'
             ORDER BY Title";
 
             $query  = new Query($sql);
@@ -132,60 +139,24 @@ include('includes/header.inc.php');
                 foreach($set as $row){
 
                     echo '<table class="table table-bordered table-striped table-hover">       
-                            <tr>';
-                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
+                                <tr>';
+                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '</th>';   
                     echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
                     echo '<p>'.$row['Description'].'<br>'. '</p>';
                     echo ' 
                         <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
                         <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
                     echo ' 
-                        <tr>
-                        <table>';      
+                         </tr>
+                        </table>';      
+                    }
                 }
             }
-    
         }
-
-        else{
-            if(!isset($radio)){
-            
-            $sql = "SELECT * 
-            FROM paintings
-            WHERE Title LIKE '%$userInput%' OR Description LIKE '%$userInput%'  
-            ORDER BY Title";
-
-            $query  = new Query($sql);
-            $set    = $query->resultSet();
-            $count  = $query->resultCount();
-
-            if($count < 1){
-                echo '<h2> "No results found" </h2>';
-                exit();
-            }
-            else{
-
-                echo "<h4>There are " .  $count . " results</h4>";
-
-                foreach($set as $row){
-
-                    echo '<table class="table table-bordered table-striped table-hover">       
-                            <tr>';
-                    echo  '<th><a href="includes/view-single-subject.php"><img src="images/works/square-medium/'.$row['ImageFileName']. '.jpg' .'"></a> ' . ' ' . '<th>';   
-                    echo '<th><h4><a href="includes/view-single-subject.php">' . ' ' . $row['Title']. '</a>' .  '</h4>';
-                    echo '<p>'.$row['Description'].'<br>'. '</p>';
-                    echo ' 
-                        <button class="btn btn-warning"><span class="glyphicon glyphicon-star"></span> Add to favorites</button>
-                        <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></th>';
-                    echo ' 
-                         <tr>
-                        <table>'; 
-                }
-            }
-
-           }
-        } 
-    }
-
-    ?>
-<?php include('includes/footer.inc.php'); ?>
+        ?>
+    </div>
+</div>
+<script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
+<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+</body>
+</html>   
