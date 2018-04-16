@@ -59,21 +59,18 @@ class Painting {
 	}
 
 	public function outputMiniature() {
-		?>
-		<div class="media">
-			<a href="iwppa2-works.php?PaintingID=<?php echo $this->paintingID; ?>" class="pull-left">
-				<img class="media-object"  src="images/works/square-tiny/<?php echo $this->imageFileName; ?>.jpg" alt="media" width="32">
-			</a>
-			<div class="media-body">
-				<p ><a href="iwppa2-works.php?PaintingID=<?php echo $this->paintingID; ?>"><?php echo $this->title; ?></a></p>
-			</div>
-		</div>
-		<?php
-		
+	 	echo '<div class="media">
+					<a href="iwppa2-works.php?PaintingID='.$this->paintingID.'" class="pull-left">
+						<img class="media-object"  src="images/works/square-tiny/'.$this->imageFileName.'.jpg" alt="'.$this->title.'" width="32">
+					</a>
+					<div class="media-body">
+						<p ><a href="iwppa2-works.php?PaintingID='.$this->paintingID.'">'.$this->title.'</a></p>
+					</div>
+				</div>';
 	}
 
-	public function glassID() {
-		return $this->glassID;
+	public function outputShoppingCart() {
+		echo '<img class="media-object" src="images/works/square-tiny/'.$this->imageFileName.'.jpg" alt="'.$this->title.'" width="32">';
 	}
 
 	public function mattID() {

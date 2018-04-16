@@ -17,7 +17,9 @@ class Cart {
 			$cookie_value = "";
 			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 		}
-
+		// as a workaround to the missing ability to overload functions
+		// in PHP, we can check how many arguments have been passed to 
+		// our function and react on that
 		if(func_num_args() > 0){
 			$parameters = func_get_args();
 			$this->cartContent[] = new CartItem($parameters[0],0,0,0); 
@@ -29,17 +31,21 @@ class Cart {
 	}
 
 	public function cartContent() {
+
 		return $this->cartContent;
 	}
 
 	public function deleteItem($cartItem) {
+		
 		if(count($this->cartContent) >= $cartItem){
 			unset($this->cartContent[$cartItem -1]);
+			// re-index the array after removing one item
 			$this->cartContent = array_values($this->cartContent);
 			$cookie_name = "YourCart";
 			$cookie_value = serialize($this->cartContent);
 			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");		
 		}
 	}
+
 	
 }
