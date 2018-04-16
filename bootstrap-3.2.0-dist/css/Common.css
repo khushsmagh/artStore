@@ -126,15 +126,11 @@ legend {
     background-color: lightgray;
 }
 .formConatiner-update{
-    border: 1px solid;
-    padding: 5px 100px 50px;
-    margin-right: 300px;
-    background-color: lightgray;
+    margin-left: 50px;
 }
 .buttonupdate{
     padding-left: 51px;
     padding-right: 50px;
-
 }
 .button2update{
     margin-left: 11px;
