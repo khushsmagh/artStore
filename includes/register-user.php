@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include("config.database.php");
 
 
@@ -16,62 +17,78 @@ if(isset($_POST['submit'])){
 	$password = $_POST['password'];
 	$cpassword = $_POST['cpassword'];
 
-	
+	$errorPassword = "Please check your password";
+	$errorName = "Please enter a valid name";
+	$errorPhone = "Please enter a valid number phone";
+	$errorEmail = "Please enter a valid email";
+	$errorPostal = "Please enter a valid Postal Code";
+	$newUser = "Welcome Please Login";
+
 	// Validate if the password is the same before registration
 	if($password != $cpassword){
-		echo "Please check if your password is the same";
+		$_SESSION["errorPassword"] = $errorPassword;
+		header("Location:register-user.form.php");
 		exit();
 	}
 
 	// Validation for empty fields
 	if(empty($firstName) || empty($lastName) || empty($address) || empty($city) || empty($region) || empty($country) || empty($postalCode) || empty($phone) || empty($email) || empty($password) || empty($cpassword)){
-		echo "missing fields";
+		
+		$_SESSION["errorName"] = $errorName;
+		header("Location:register-user.form.php");
 		exit();
 	}
 
 	// Validate phone number
 	// Checking that this does not have letters or special characteres
 	if(preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $phone)) {
-  		echo "Phone number is not valid";
-  		exit();
+  		$_SESSION["errorPhone"] = $errorPhone;
+		header("Location:register-user.form.php");
+		exit();
 	}
 
 	// Validate lenght of the phone (American)
 	// If phone is greater than 10, is not valid
-	if (strlen($phone) > 10){
-		echo "Please enter a valid number phone";
+	if (strlen($phone) > 10 || strlen($phone) < 8 ){
+		$_SESSION["errorPhone"] = $errorPhone;
+		header("Location:register-user.form.php");
 		exit();
 	}
 
 	// Checking if the user name input is valid
 	if(!preg_match("/^[a-zA-Z ]*$/", $firstName)){
-		echo "Invalid name";
+		$_SESSION["errorName"] = $errorName;
+		header("Location:register-user.form.php");
 		exit();
 	} 
 
 	// Checking if the user lastName input is valid
-	if(!preg_match("/^[a-zA-Z ]*$/", $firstName)){
-		echo "Invalid last name";
+	if(!preg_match("/^[a-zA-Z ]*$/", $LastName)){
+		$_SESSION["errorName"] = $errorName;
+		header("Location:register-user.form.php");
 		exit();
 	}
 
 	//Checking if e-mail is valid
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 		//header("Location:register-user.form.php?Invalid=Email");
-		echo "Check valid email";
+		$_SESSION["errorEmail"] = $errorEmail;
+		header("Location:register-user.form.php");
 		exit();
 	}
 
 	// Checking for valid postal code
 	if(!preg_match("/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/", $postalCode)){
-		echo "Invalid postal code";
+		$_SESSION["errorPostal"] = $errorPostal;
+		header("Location:register-user.form.php");
 		exit();
 	}
 
 	// Checking if postalCode lenght is valid
 	// if greater than 6, is not valid
 	if(strlen($postalCode) > 6){
-		echo "Invalid postal code";
+		$_SESSION["errorPostal"] = $errorPostal;
+		header("Location:register-user.form.php");
 		exit();
 	}
 		
@@ -106,8 +123,8 @@ if(isset($_POST['submit'])){
 			":email" => $email
 		));
 
-		header("Location:register-user.form.php?Signup=success");
-		echo "Connection succesfully";
+		$_SESSION["newUser"] = $newUser;
+		header("Location:login-form.php");
 		exit();
 	}
 
