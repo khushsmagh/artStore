@@ -164,10 +164,10 @@
                             <label class="col-md-2"></label>
                             <div class="col-md-6">
                                 <button type="submit" name="submit" class="btn btn-success" >Register <span class="glyphicon glyphicon-send"></span></button>
-                                 </div>
+                                <a href="../iwppa2-works.php"><button class="btn btn-primary" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
+                            </div>
                         </div>
                 </form>
-                        <a href="../iwppa2-works.php"><button class="btn btn-primary" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
                     </div>
                 </div>
                 <div class="col-lg-2"></div>
