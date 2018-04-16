@@ -8,12 +8,15 @@ if(isset($_POST['submit'])){
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
+	$error = "Wrong username or password!";
+	$errorP = "Your password does not match!";
+	$welcome = "Login succesfully, Welcome back!";
 
 	// Checking for empty user imput
 	// Stop user from submission if there is no entry
 	if(empty($email) || empty($password)){
-		echo "Please check your fields";
-		header("Location:login-form.php?Error=Logging");
+		$_SESSION["error"] = $error;
+		header("Location:login-form.php");
 		exit();
 	}
 
@@ -24,7 +27,9 @@ if(isset($_POST['submit'])){
 
 			$hashedPassword = password_verify($password, $row->Pass);
 			if ($hashedPassword == false){
-				header("Location:login-form.php?Error=Logging=no=password");
+				
+				$_SESSION["errorP"] = $errorP;
+				header("Location:login-form.php");
 				exit();
 			}
             else{ 
@@ -33,9 +38,9 @@ if(isset($_POST['submit'])){
 					// Logging the Customer using superglobal Session
             		// if succesful, it redirects user to the website
 					$_SESSION['CustId'] = $row->CustomerID};
+					$_SESSION['welcome'] = $welcome;
 
-					echo "logged in";
-					header("Location:../iwppa2-works.php");
+					header("Location:../iwppa2-index.php");
 				}
 			}	
 		}
