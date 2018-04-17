@@ -1,4 +1,6 @@
 <?php
+require_once('includes/painting.class.php');
+
 include ('config.database.php');
 include ('single-subject.class.php');
 function ViewSingleSubject()
@@ -33,16 +35,9 @@ function OutputSingleSubject()
     $getsubject = ViewSingleSubject();
     foreach ($getsubject as $subject)
     {
-        echo '<div class = "col-md-3">
-                <div class = "thumbnail">
-                <a href="iwppa2-works.php?PaintingID='.$subject->getPaintingID().'" ><img src="images/works/square-medium/'.$subject->getImageFIleName().'.jpg" alt="1"></a>
-                <div class = "caption">
-                <h4>
-    '.$subject->getPaintingTitle().'
-                </h4>
-                </div>
-                </div>
-                </div>';
+	$painting = new Painting($subject->getPaintingID());
+	$painting->outputThumbnail();
     }
 }
 ?>
+

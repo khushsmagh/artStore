@@ -91,11 +91,12 @@ require_once('includes/types.matt.class.php');
 									?>
 									</select>
 								</div>
-								<button type="submit" class="btn btn-default">Update</button>
+								<button type="submit" class="btn btn-primary">Update</button>
+							<a href="delete-cart-item.php?cartItem=<?php echo $rowCount; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"> delete</a>
+
 								</form>
 							</div>
 							<div class="col-md-4">
-							<a href="delete-cart-item.php?cartItem=<?php echo $rowCount; ?>" onclick="return confirm('Are you sure?')"> delete</a>
 
 							</div>
 						</div>
@@ -107,7 +108,7 @@ require_once('includes/types.matt.class.php');
   <?php
 			}
 				?>
-
+			<br>Just for testing purposes:
 			<form action="add-to-cart.php" method="POST">
 			  Painting ID:<br>
 			  <input type="text" name="paintingID">
