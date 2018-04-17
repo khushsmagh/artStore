@@ -38,10 +38,7 @@ class Painting {
 					<p class="similarTitle"><a href="#"><b><?php echo $this->title; ?></b></a></p>
 					<div class="row">
 						<div class="col-md-4">
-							<a href = "iwppa2-works.php?PaintingID=<?php echo $this->paintingID; ?>">
-							<button class="btn btn-primary btn-sm" type="button">
-							<span class="glyphicon glyphicon-info-sign"></span> View
-							</button></a>
+						<a href="iwppa2-works.php?PaintingID=<?php echo $this->paintingID; ?>" class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-info-sign"></span> View</a>
 						</div>
 						<div class="col-md-4">
 							<button class="btn btn-success btn-sm" type="button">
