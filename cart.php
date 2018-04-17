@@ -103,7 +103,7 @@ require_once('includes/types.matt.class.php');
 ?>
 				</div>
 				<script src="js/accordion.js"></script>
-				
+				<script> window.onload = changeBackground() </script>
   <?php
 			}
 				?>

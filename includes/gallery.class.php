@@ -19,4 +19,13 @@ class Gallery {
 		return $this->resultSet[0];
 	}
 	
+	public function artWorks(){
+		echo '
+			<h2>these are our paintings</h2>
+		<div class="row fix">
+		paintings here
+		</div>
+		';
+	}
+	
 }

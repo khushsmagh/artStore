@@ -30,9 +30,10 @@ class TypesMatt {
 		}
 		
 		foreach($this->resultSet as $result){
+			if($result['ColorCode'] == "") $result['ColorCode'] = 'ffffff';
 			echo '<option ';
 			if ($result['MattID'] == $this->active) echo 'selected ';
-			echo 'class="#'.$result['ColorCode'].'" value="'.$result['MattID'].'">'.$result['Title'].'</option>';
+			echo 'class="#'.$result['ColorCode'].'" style="background-color: #'.$result['ColorCode'].';" value="'.$result['MattID'].'">'.$result['Title'].'</option>';
 		}
 	}
 }
