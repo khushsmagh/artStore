@@ -1,4 +1,6 @@
 <?php
+require_once('includes/painting.class.php');
+
 include ('config.database.php');
 include ('single-genre.class.php');
 include ('view-works.class.php');
@@ -124,19 +126,8 @@ function SimilarProducts()
     $product = Product();
     foreach($product as $showproduct)
     {
-        echo '<div class="col-md-3">
-                        <div class="thumbnail">
-                            <div  class="similarTitle">
-                                <img class="thumbnail" src="images/works/square-medium/'.$showproduct->getImageFIleName().'.jpg" alt="thumbnail" >
-                                <div class="btn-group-xs">
-                                    <p><a href="#">'.$showproduct->getPaintingTitle().'</a></p>
-                                    <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> View</button>
-                                    <button class="btn btn-success"><span class="glyphicon glyphicon-gift"></span> Wish</button>
-                                    <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button>   
-                                </div>
-                            </div>
-                        </div>
-                    </div> ';
+	$painting = new Painting($showproduct->getPaintingID());
+	$painting->outputThumbnail();
     }
 }
 

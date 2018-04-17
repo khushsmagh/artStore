@@ -28,8 +28,8 @@ class Query {
 		return $this->resultSet;
 	}
 
-		public function resultCount() {
-			return $this->resultCount;
+	public function resultCount() {
+		return $this->resultCount;
 	}
 
 }
