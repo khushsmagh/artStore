@@ -1,4 +1,6 @@
 <?php
+require_once('includes/painting.class.php');
+
 include ('config.database.php');
 include ('single-genre.class.php');
 function ViewSingleGenre()
@@ -33,16 +35,8 @@ function OutputSingleGenre()
 {
     $getgenre = ViewSingleGenre();
     foreach ($getgenre as $genredetails) {
-        echo '<div class = "col-md-3">';
-        echo '<div class = "thumbnail">';
-        echo '<a href = "iwppa2-works.php?PaintingID='.$genredetails->getPaintingID().'"><img src="images/works/square-medium/' . $genredetails->getImageFIleName() . '.jpg" alt="1"></a>';
-        echo '<div class = "caption">';
-        echo '<h4>';
-        echo $genredetails->getPaintingTitle();
-        echo '</h4>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
+		$painting = new Painting($genredetails->getPaintingID());
+		$painting->outputThumbnail();
     }
 }
 

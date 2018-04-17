@@ -8,12 +8,9 @@ require_once('includes/types.glass.class.php');
 require_once('includes/types.matt.class.php');
 
 ?>
-				<script src="js/changeBackground.js"></script>
+			<script src="js/changeBackground.js"></script>
 
-			<h2>Your cart</h2>
-			
-<a href="clear-cart.php" onclick="return confirm('This will empty your cart \n Are you sure?')"> empty cart </a>
-				
+			<h2>Your cart</h2>				
 <?php
 			if(is_array($myCart->cartContent())){
 ?>
@@ -103,6 +100,9 @@ require_once('includes/types.matt.class.php');
 <?php					}	
 ?>
 				</div>
+				<br>
+				<a href="clear-cart.php" class="btn btn-danger" onclick="return confirm('This will empty your cart \n Are you sure?')"> empty cart </a>
+				<br>
 				<script src="js/accordion.js"></script>
 				<script> window.onload = changeBackground() </script>
   <?php
