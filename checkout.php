@@ -1,5 +1,11 @@
 <?php
-$pageTitle = 'Your cart';
+session_start();
+
+if(!isset($_SESSION['CustId'])){
+	header("Location: includes/login-form.php");
+} else {
+
+$pageTitle = 'Checkout';
 
 include('includes/header.inc.php');
 require_once('includes/painting.class.php');
@@ -119,4 +125,4 @@ require_once('includes/types.matt.class.php');
 			</form>
 
 			
-<?php include('includes/footer.inc.php'); ?>
+<?php include('includes/footer.inc.php'); }?>

@@ -30,7 +30,7 @@ require_once('includes/painting.class.php');
                                 <strong class="cartText">Subtotal:</strong> <span > $<?php echo number_format($cartTotal,2); ?> </span>
                                 <div class="btn-group-xs">
 									<a href="cart.php" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-info-sign"></span> Edit</a>
-                                    <button class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</button>  
+                                    <a href="checkout.php" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a>
                                 </div>
 
                             </div>
