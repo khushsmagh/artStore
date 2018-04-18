@@ -14,6 +14,7 @@ require_once('includes/painting.class.php');
 require_once('includes/types.frames.class.php');
 require_once('includes/types.glass.class.php');
 require_once('includes/types.matt.class.php');
+require_once('includes/customer.class.php');
 
 ?>
 			<script src="js/changeBackground.js"></script>
@@ -22,6 +23,11 @@ require_once('includes/types.matt.class.php');
 
 <?php include('includes/cart.contents.inc.php'); ?>
 
-			
-			
+<?php
+		if(is_numeric($_SESSION['CustId'])){
+			$customer = $_SESSION['CustId'];
+			$customer = new Customer($customer);
+			$customer->outputAddress();
+		}
+?>			
 <?php include('includes/footer.inc.php'); }?>
