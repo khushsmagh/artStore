@@ -1,11 +1,11 @@
-<?php 
+<?php
 $pageTitle = 'Detail page';
 include ('includes/view-works.php');
 include ('includes/view-reviews.php');
 include('includes/header.inc.php');
 $work = ViewWorks();
 ?>
-                    <h2><?php echo $work->getPaintingTitle() ?></h2>
+<link href="bootstrap-3.2.0-dist/css/Common.css" type="text/css" rel="stylesheet">
 
                     <p>By <a href="#"><?php echo $work->getFirstName() , $work->getLastName() ?><!--Louise Elisabeth Lebrun--></a></p>
                     <div class="col-md-5">
@@ -77,7 +77,33 @@ $work = ViewWorks();
 </div>
 <p> </p>
 <h3> Reviews </h3>
-<?php OutputReview(); ?>
+<h4>Add Review</h4>
+<div class="stars">
+    <form>
+        <input class="star star-5" id="star-5" type="radio" name="star"/>
+        <label class="star star-5" for="star-5"></label>
+        <input class="star star-4" id="star-4" type="radio" name="star"/>
+        <label class="star star-4" for="star-4"></label>
+        <input class="star star-3" id="star-3" type="radio" name="star"/>
+        <label class="star star-3" for="star-3"></label>
+        <input class="star star-2" id="star-2" type="radio" name="star"/>
+        <label class="star star-2" for="star-2"></label>
+        <input class="star star-1" id="star-1" type="radio" name="star"/>
+        <label class="star star-1" for="star-1"></label>
+        <textarea  rows="4" cols="50"  placeholder="Comment ..."></textarea><br>
+        <button class="btn btn-primary btn-xs" type="submit">Submit</button>
+    </form>
+</div>
+<br>
+<p></p>
+<h4>View Review</h4>
+<span class="fa fa-star starclick"></span>
+<span class="fa fa-star starclick"></span>
+<span class="fa fa-star starclick"></span>
+<span class="fa fa-star starclick"></span>
+<span class="fa fa-star"></span>
+
+
 
 <!--
                     <div class="col-md-3">
@@ -88,7 +114,7 @@ $work = ViewWorks();
                                     <p><a href="#">Artist Holding a Thistle</a></p>
                                     <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> View</button>
                                     <button class="btn btn-success"><span class="glyphicon glyphicon-gift"></span> Wish</button>
-                                    <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button>   
+                                    <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +132,7 @@ $work = ViewWorks();
                                 </div>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
                     <div class="col-md-3">
                         <div class="thumbnail">
                             <div class="similarTitle">
@@ -119,8 +145,8 @@ $work = ViewWorks();
                                 </div>
                             </div>
                         </div>
-                    </div>                   
-                    <div class="col-md-3"> 
+                    </div>
+                    <div class="col-md-3">
                         <div class="thumbnail">
                             <div  class="similarTitle">
                                 <img class="thumbnail" src="images/thumbs/106020.jpg" alt="thumbnail3" >
@@ -134,5 +160,5 @@ $work = ViewWorks();
                         </div>
                     </div>
                     -->
-		
+
 <?php include('includes/footer.inc.php'); ?>
