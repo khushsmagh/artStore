@@ -1,9 +1,6 @@
 <?php
 require_once('includes/CartItem.class.php');
 
-require_once('includes/query.class.php');
-
-
 class Cart {
 	
 	protected $cartContent;
