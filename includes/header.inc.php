@@ -50,6 +50,9 @@ $myCart = new Cart();
                                             <button class="btn btn-success" type="submit" name="submit">Logout</button>
                                         </form></li>';
                                         } ?>
+                                        <?php if(isset($_SESSION['Admin'])){
+                                            echo '<li><a href="admin.index.php"><span class="glyphicon glyphicon-user"></span> Users List</a></li>';
+                                        } ?>
                                         <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
                                         <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
                                         <li><a href="checkout.php"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
