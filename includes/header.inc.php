@@ -67,7 +67,7 @@ $myCart = new Cart();
                 <div id="logoRow" >
                     <div class="main row">
                         <h1 class="col-md-8">Art Store</h1>
-                        <form action="http://www.randyconnolly.com/tests/process.php" method="post" class="col-md-3">
+                        <form action="search.php" method="GET" class="col-md-3">
                             <div class="input-group">
                                 <input class="form-control" type="text"  placeholder="Search" name="search">
                                     <div class="input-group-btn">

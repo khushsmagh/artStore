@@ -1,6 +1,13 @@
 <?php
 $pageTitle = 'Search';
 include('includes/header.inc.php'); 
+
+if(isset($_GET["search"])){
+    $simpleSearch = $_GET["search"];
+}else{
+    $simpleSearch = "";
+}
+
 ?>
         <h2>Search Results</h2>
 
@@ -11,7 +18,7 @@ include('includes/header.inc.php');
             <label class="form-check-label">
                 Filter by Title:
             </label>
-            <input type="text" name="user-input" class="form-control">
+            <input type="text" name="user-input" class="form-control" value="<?php echo $simpleSearch ?>">
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="radioTitle" value="description">

@@ -216,7 +216,7 @@ session_start();
                     </form>
                         <div class="form-group">
                             <div class="col-lg-3">
-                                <a href="../iwppa2-works.php"><button class="btn btn-primary buttonregister" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
+                                <a href="../iwppa2-index.php"><button class="btn btn-primary buttonregister" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
                             </div>
                         </div>
 
