@@ -4,36 +4,49 @@ session_start();
 
 include("config.database.php");
 
-if(isset($_POST['submit'])){
-	$email = $_POST['email'];
-	$password = $_POST['password'];
 
-	$error = "Wrong username or password!";
-	$errorP = "Your password does not match!";
-	$welcome = "Login succesfully, Welcome back!";
+		if(isset($_POST['submit'])){
 
-	// Checking for empty user imput
-	// Stop user from submission if there is no entry
-	if(empty($email) || empty($password)){
-		$_SESSION["error"] = $error;
-		header("Location:login-form.php");
-		exit();
-	}
+		$email = $_POST['email'];
+		$password = $_POST['password'];
 
-	// Checking if the user exists in the database
-	if ($result = $connection->query("SELECT * FROM customerlogon WHERE UserName = '$email'")->fetchAll(PDO::FETCH_OBJ)){
+		$error = "Wrong username or password!";
+		$errorP = "Your password does not match!";
+		$welcome = "Login succesfully, Welcome back!";
+		$welcomeAdmin = "Welcome Admin";
 
-		foreach ($result as $row) {
+		// Checking for empty user imput
+		// Stop user from submission if there is no entry
+		if(empty($email) || empty($password)){
+			$_SESSION["error"] = $error;
+			header("Location:login-form.php");
+			exit();
+		}
 
-			$hashedPassword = password_verify($password, $row->Pass);
-			if ($hashedPassword == false){
+		// Checking if the user exists in the database
+		if ($result = $connection->query("SELECT * FROM customerlogon WHERE UserName = '$email'")->fetchAll(PDO::FETCH_OBJ)){
+
+			foreach ($result as $row) {
+
+				$hashedPassword = password_verify($password, $row->Pass);
+				if ($hashedPassword == false){
 				
-				$_SESSION["errorP"] = $errorP;
-				header("Location:login-form.php");
-				exit();
-			}
-            else{ 
-            ($hashedPassword == true){
+					$_SESSION["errorP"] = $errorP;
+					header("Location:login-form.php");
+					exit();
+				}
+	             
+	            if($hashedPassword == true && $email == $row->UserName && $row->Admin == true){
+
+					// Logging the Admin using superglobal Session
+            		// if succesful, it redirects user to the website
+					$_SESSION['Admin'] = $row->UserName;
+					$_SESSION['welcome'] = $welcomeAdmin;
+
+					header("Location:../admin.index.php");
+					exit();
+				}
+				else($hashedPassword == true){
 
 					// Logging the Customer using superglobal Session
             		// if succesful, it redirects user to the website
@@ -41,8 +54,8 @@ if(isset($_POST['submit'])){
 					$_SESSION['welcome'] = $welcome;
 
 					header("Location:../iwppa2-index.php");
-				}
 			}	
 		}
-	  }
+	 }
+
 ?>
