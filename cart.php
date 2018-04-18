@@ -39,7 +39,7 @@ require_once('includes/types.matt.class.php');
 						$painting = new Painting($cartItem->paintingID());
 						$rowCount++;
 ?>
-							<div class="row accordion">
+							<div class="row accordion well well-sm">
 								<div class="col-md-1">
 								<?php echo $rowCount; ?>
 								</div>
@@ -57,7 +57,8 @@ require_once('includes/types.matt.class.php');
 								</div>
 							</div>
 							<div class="row panel">
-								<div class="col-md-8">
+							<div class="col-md-8">
+								The base price for this art work is <?php echo '$ '.number_format($painting->price(),2); ?>. Select your additions below:<br><br>
 								<form action="update-cart-item.php" method="POST" >
 									<input type="hidden" name="cartItem" value="<?php echo $rowCount; ?>">
 									<input type="hidden" name="paintingID" value="<?php echo $cartItem->paintingID(); ?>">
