@@ -8,8 +8,8 @@ $work = ViewWorks();
 <link href="bootstrap-3.2.0-dist/css/Common.css" type="text/css" rel="stylesheet">
 
                     <p>By <a href="#"><?php echo $work->getFirstName() , $work->getLastName() ?><!--Louise Elisabeth Lebrun--></a></p>
-                    <div class="col-md-3">
-                        <img src="images/tiny/<?php echo $tiny->getImageFIleName() ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
+                    <div class="col-md-5">
+                        <img src="images/works/medium/<?php echo $work->getImageFIleName() ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
                     </div>
                     <div class="col-md-7">
                         <p>
