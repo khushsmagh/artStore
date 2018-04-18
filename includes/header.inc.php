@@ -31,7 +31,7 @@ $myCart = new Cart();
                         <div class="container">
                             <div class="collapse navbar-collapse" id="navbar-1">
                                 <div id="nav_inversed">
-                                    <p class="navbar-brand">Welcome to the Art Store,<a href="includes/login-form.php"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a></p>
+                                    <p class="navbar-brand">Welcome to the Art Store, <?php if(!isset($_SESSION['CustId'])){?><a href="includes/login-form.php"> Login</a> or <a href="includes/register-user.form.php"> Create an account</a><?php } ?></p>
                                     <ul class="nav navbar-nav navbar-right">
                                         <?php if(isset($_SESSION["welcome"])){
                                             $welcome = $_SESSION["welcome"];
