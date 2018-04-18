@@ -3,18 +3,15 @@ $pageTitle = 'Artists';
 include('includes/header.inc.php'); 
 include('includes/view-artists.php');
 ?>
-</div>
-    <h3>This Week's best selling artists</h3>
+    <h2>This Week's best selling artists</h2>
     <div class="alert alert-warning">
         <p>Each week we show you who are our best-selling artists ...</p>
     </div>
-<div class = "container">
     <div class="row">
         <?php
         OutputArtist();
         ?>
     </div>
-</div>
     <h4> Artists by Genre </h4>
     <div class="row">
         <div class="col-md-12">
@@ -37,9 +34,5 @@ include('includes/view-artists.php');
             </div>
         </div>
 	</div>
-</div>
-</div>
-<script src="bootstrap-3.2.0-dist/js/jQuery.js"></script>
-<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+<?php include('includes/footer.inc.php'); ?>

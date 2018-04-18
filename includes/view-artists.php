@@ -33,7 +33,7 @@ function OutputArtist()
     $getartist = artistsinfo();
     foreach ($getartist as $showartist) {
 
-        echo '<div class="col-md-2">';
+        echo '<div class="col-md-3">';
         echo '<div class="thumbnail">';
         echo '<a href = "single-artist.php?ArtistID=' . $showartist->getArtist() . '" ><img src="images/artists/square-medium/' . $showartist->getArtist() . '.jpg" alt="1"></a>';
         echo '<div class="caption">';
