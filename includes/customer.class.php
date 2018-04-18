@@ -48,5 +48,9 @@ class Customer {
 			 $this->City.' '.$this->Region.' '.$this->Postal.'<br>'.
 			 $this->Country;
 	}
-	
+
+	public function getCountry() {
+		return $this->Country;
+	}
+
 }
