@@ -30,10 +30,27 @@ function ViewReviews()
 
 function OutputReview()
 {
+
     $rev = ViewReviews();
     foreach ($rev as $showrev)
     {
-        echo '<p>'.$showrev->getReviewdate().' '.$showrev->getRating().' '.$showrev->getComment().' </p>';
+        $count = 0;
+        echo '
+<div class="col-md-8">';
+        while ($count < $showrev->getRating())
+        {
+echo'<span class="fa fa-star starclick"></span>';
+$count =  $count + 1;
+}
+
+echo'<div >'.$showrev->getReviewdate().'</div>
+<div class="col-md-8">'.$showrev->getComment().'</div>
+<div class="col-md-5">
+<a href="includes/view-delete-review.php?RatingID='.$showrev->getRatingID().'">
+    <button class="btn btn-danger btn-xs" type="submit">Delete</button>
+    </a>
+    </div>
+    </div>';
     }
 }
 

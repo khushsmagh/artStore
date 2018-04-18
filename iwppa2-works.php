@@ -79,116 +79,24 @@ $work = ViewWorks();
 <h3> Reviews </h3>
 <h4>Add Review</h4>
 <div class="stars">
-    <form>
-        <input class="star star-5" id="star-5" type="radio" name="star"/>
+    <form action="includes/view-add-review.php?PaintingID=<?php echo $work->getPaintingID()?>" method="post">
+        <input class="star star-5" id="star-5" type="radio" name="star" value = "5" />
         <label class="star star-5" for="star-5"></label>
-        <input class="star star-4" id="star-4" type="radio" name="star"/>
+        <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
         <label class="star star-4" for="star-4"></label>
-        <input class="star star-3" id="star-3" type="radio" name="star"/>
+        <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
         <label class="star star-3" for="star-3"></label>
-        <input class="star star-2" id="star-2" type="radio" name="star"/>
+        <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
         <label class="star star-2" for="star-2"></label>
-        <input class="star star-1" id="star-1" type="radio" name="star"/>
+        <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
         <label class="star star-1" for="star-1"></label>
-        <textarea  rows="4" cols="50"  placeholder="Comment ..."></textarea><br>
+        <textarea  rows="4" cols="50"  placeholder="Comment ..." name = "comment"></textarea><br>
         <button class="btn btn-primary btn-xs" type="submit">Submit</button>
     </form>
 </div>
 <br>
 <p></p>
 <h4>View Review</h4>
-<div class="col-md-8">
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star"></span>
-    <div >Date 2018/04/18</div>
-    <div class="col-md-8">Bla bla bla Bla bla bla bla  blaBla bla bla bla  Bla bla bla bla Bla bla bla bla Bla blaBla blBla bla blaBla bla bla bla Bla bla bla bla bla Bla bla bla blaa bla bla Bla bla bla bla bla bla Bla bla bla bla Bla bla bla bla </div>
-    <div class="col-md-5">
-        <button class="btn btn-danger btn-xs" type="submit">Delete</button>
-    </div>
-</div>
-<p></p>
-<div class="col-md-8">
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <div >Date 2018/04/18</div>
-    <div class="col-md-8">Bla bla bla Bla bla bla bla  blaBla bla bla bla  Bla bla bla bla Bla bla bla bla Bla blaBla blBla bla blaBla bla bla bla Bla bla bla bla bla Bla bla bla blaa bla bla Bla bla bla bla bla bla Bla bla bla bla Bla bla bla bla </div>
-    <div class="col-md-5">
-        <button class="btn btn-danger btn-xs" type="submit">Delete</button>
-    </div>
-</div>
-<p></p>
-<div class="col-md-8">
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star starclick"></span>
-    <span class="fa fa-star" ></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <div >Date 2018/04/18</div>
-    <div class="col-md-8">Bla bla bla Bla bla bla bla  blaBla bla bla bla  Bla bla bla bla Bla bla bla bla Bla blaBla blBla bla blaBla bla bla bla Bla bla bla bla bla Bla bla bla blaa bla bla Bla bla bla bla bla bla Bla bla bla bla Bla bla bla bla </div>
-    <div class="col-md-5">
-        <button class="btn btn-danger btn-xs" type="submit">Delete</button>
-    </div>
-</div>
-<!--
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <div  class="similarTitle">
-                                <img class="thumbnail" src="images/thumbs/116010.jpg" alt="thumbnail" >
-                                <div class="btn-group-xs">
-                                    <p><a href="#">Artist Holding a Thistle</a></p>
-                                    <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> View</button>
-                                    <button class="btn btn-success"><span class="glyphicon glyphicon-gift"></span> Wish</button>
-                                    <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <div  class="similarTitle">
-                                <img class="thumbnail" src="images/thumbs/120010.jpg" alt="thumbnail1" >
-                                <div class="btn-group-xs">
-                                    <p><a href="#">Portrait of Eleanor of Toledo</a></p>
-                                    <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> View</button>
-                                    <button class="btn btn-success"><span class="glyphicon glyphicon-gift"></span> Wish</button>
-                                    <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <div class="similarTitle">
-                                <img class="thumbnail" src="images/thumbs/107010.jpg" alt="thumbnail2" >
-                                <div class="btn-group-xs">
-                                    <p><a href="#">Madame de Pompadour</a></p>
-                                    <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> View</button>
-                                    <button class="btn btn-success"><span class="glyphicon glyphicon-gift"></span> Wish</button>
-                                    <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <div  class="similarTitle">
-                                <img class="thumbnail" src="images/thumbs/106020.jpg" alt="thumbnail3" >
-                                <div class="btn-group-xs">
-                                    <p><a href="#">Girl with a Pearl Earring</a></p>
-                                    <button class="btn btn-primary"><span class="glyphicon glyphicon-info-sign"></span> View</button>
-                                    <button class="btn btn-success"><span class="glyphicon glyphicon-gift"></span> Wish</button>
-                                    <button class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
+<?php echo OutputReview();?>
 
 <?php include('includes/footer.inc.php'); ?>
