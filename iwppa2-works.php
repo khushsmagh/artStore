@@ -97,19 +97,44 @@ $work = ViewWorks();
 <br>
 <p></p>
 <h4>View Review</h4>
-<span class="fa fa-star starclick"></span>
-<span class="fa fa-star starclick"></span>
-<span class="fa fa-star starclick"></span>
-<span class="fa fa-star starclick"></span>
-<span class="fa fa-star"></span>
-<div >Date 2018/04/18</div>
-<div class="col-md-8">Bla bla bla Bla bla bla bla  blaBla bla bla bla  Bla bla bla bla Bla bla bla bla Bla blaBla blBla bla blaBla bla bla bla Bla bla bla bla bla Bla bla bla blaa bla bla Bla bla bla bla bla bla Bla bla bla bla Bla bla bla bla </div>
-<div class="col-md-5">
-    <button class="btn btn-danger btn-xs" type="submit">Delete</button>
+<div class="col-md-8">
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star"></span>
+    <div >Date 2018/04/18</div>
+    <div class="col-md-8">Bla bla bla Bla bla bla bla  blaBla bla bla bla  Bla bla bla bla Bla bla bla bla Bla blaBla blBla bla blaBla bla bla bla Bla bla bla bla bla Bla bla bla blaa bla bla Bla bla bla bla bla bla Bla bla bla bla Bla bla bla bla </div>
+    <div class="col-md-5">
+        <button class="btn btn-danger btn-xs" type="submit">Delete</button>
+    </div>
 </div>
-
-
-
+<p></p>
+<div class="col-md-8">
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <div >Date 2018/04/18</div>
+    <div class="col-md-8">Bla bla bla Bla bla bla bla  blaBla bla bla bla  Bla bla bla bla Bla bla bla bla Bla blaBla blBla bla blaBla bla bla bla Bla bla bla bla bla Bla bla bla blaa bla bla Bla bla bla bla bla bla Bla bla bla bla Bla bla bla bla </div>
+    <div class="col-md-5">
+        <button class="btn btn-danger btn-xs" type="submit">Delete</button>
+    </div>
+</div>
+<p></p>
+<div class="col-md-8">
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star starclick"></span>
+    <span class="fa fa-star" ></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <div >Date 2018/04/18</div>
+    <div class="col-md-8">Bla bla bla Bla bla bla bla  blaBla bla bla bla  Bla bla bla bla Bla bla bla bla Bla blaBla blBla bla blaBla bla bla bla Bla bla bla bla bla Bla bla bla blaa bla bla Bla bla bla bla bla bla Bla bla bla bla Bla bla bla bla </div>
+    <div class="col-md-5">
+        <button class="btn btn-danger btn-xs" type="submit">Delete</button>
+    </div>
+</div>
 <!--
                     <div class="col-md-3">
                         <div class="thumbnail">
