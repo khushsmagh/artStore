@@ -47,7 +47,7 @@ $myCart = new Cart();
                                         } ?>
                                         <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
                                         <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
+                                        <li><a href="checkout.php"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
                                     </ul>
                                 </div>
                             </div>
