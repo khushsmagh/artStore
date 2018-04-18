@@ -176,3 +176,10 @@ label.star:before {
     color: orange;
 }
 /*Disclose*/
+.favorite{
+    margin-left: 50px;
+    border: 1px solid;
+    padding:50px;
+    margin-right: 280px;
+    background-color: lightgray;
+}

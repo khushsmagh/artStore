@@ -45,6 +45,11 @@ $myCart = new Cart();
                                         <?php if(isset($_SESSION['CustId'])){
                                             echo '<li><a href="update-user.form.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>';
                                         } ?>
+                                        <?php if(isset($_SESSION['Admin'])){
+                                            echo '<li><form style="padding-top: 10px;" action="includes/logout.php" method="POST">
+                                            <button class="btn btn-success" type="submit" name="submit">Logout</button>
+                                        </form></li>';
+                                        } ?>
                                         <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
                                         <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
                                         <li><a href="checkout.php"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
