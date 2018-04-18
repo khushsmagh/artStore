@@ -209,17 +209,19 @@ session_start();
                         </div>
                         <div>
                             <label class="col-md-2"></label>
-                            <div class="col-md-6">
-                                <button type="submit" name="submit" class="btn btn-success" >Register <span class="glyphicon glyphicon-send"></span></button>
+                            <div class="col-md-3">
+                                <button type="submit" name="submit" class="btn btn-success buttonregister" >Register <span class="glyphicon glyphicon-send"></span></button>
                             </div>
                         </div>
                     </form>
-                    <div class="form-group">
-                        <label class="col-md-2"></label>
-                        <div class="col-md-6">
-                            <a href="../iwppa2-index.php" class="btn btn-primary">Cancel <span class="glyphicon glyphicon-remove-sign"></span></a> 
+                        <div class="form-group">
+                            <div class="col-lg-4">
+                                <a href="../iwppa2-works.php"><button class="btn btn-primary buttonregister" >Cancel <span class="glyphicon glyphicon-remove-sign"></span></button></a>
+                            </div>
                         </div>
-                    </div>
+
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-lg-2"></div>
