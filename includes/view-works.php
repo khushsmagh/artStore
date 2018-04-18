@@ -5,10 +5,18 @@ include ('config.database.php');
 include ('single-genre.class.php');
 include ('view-works.class.php');
 include ('single-subject.class.php');
+
 function ViewWorks()
 {
     try {
-        $getPaintingID = $_GET['PaintingID'];
+        if (isset($_GET['PaintingID']))
+        {
+            $getPaintingID = $_GET['PaintingID'];
+        }
+        else
+        {
+            $getPaintingID = 437;
+        }
         $connection = new PDO(DBCONNSTRING, DBUSER, DBPASS);
         // set the PDO error mode to exception
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -29,7 +37,14 @@ function ViewWorks()
 function ViewGenres()
 {
     try {
-        $getPaintingID = $_GET['PaintingID'];
+        if (isset($_GET['PaintingID']))
+        {
+            $getPaintingID = $_GET['PaintingID'];
+        }
+        else
+        {
+            $getPaintingID = 437;
+        }
         $connection = new PDO(DBCONNSTRING, DBUSER, DBPASS);
         // set the PDO error mode to exception
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -63,7 +78,14 @@ function OutputGenre()
 function ViewSubject()
 {
     try {
-        $getPaintingID = $_GET['PaintingID'];
+        if (isset($_GET['PaintingID']))
+        {
+            $getPaintingID = $_GET['PaintingID'];
+        }
+        else
+        {
+            $getPaintingID = 437;
+        }
         $connection = new PDO(DBCONNSTRING, DBUSER, DBPASS);
         // set the PDO error mode to exception
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
