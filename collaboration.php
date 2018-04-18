@@ -1,4 +1,5 @@
 <?php 
+$pageTitle = 'Group collaboration';
 include("includes/header.inc.php");
 ?>
 
