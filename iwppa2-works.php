@@ -14,7 +14,7 @@ $work = ViewWorks();
                         <p>
                             <?php echo $work->getExcerpt() ?>
                              </p>
-                        <p class="price"><?php echo $work->getCost()?></p>
+                        <p class="price"><?php echo number_format($work->getCost(),2)?></p>
                         <div class="btn-group">
                             <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-gift"></span> Add to Wish List</a></button>
                             <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Shopping Cart</a></button>
