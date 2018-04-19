@@ -1,4 +1,6 @@
 <?php
+require_once('includes/painting.class.php');
+
 include ('config.database.php');
 include ('single-artist.class.php');
 include ('single-artist-painting.class.php');
@@ -43,43 +45,9 @@ function ViewArtistPainting()
 function OutputArtistPainting()
 {
     $getpainting = ViewArtistPainting();
-    foreach ($getpainting as $showpainting)
-    {
-       echo '
-       <div class="col-md-3">
-        <div class="thumbnail">
-       <a href = "iwppa2-works.php?PaintingID='.$showpainting->getPaintingID().'"><img class="img-thumbnail" src="images/works/square-medium/'.$showpainting->getImageFIleName().'.jpg" alt="..."></a>
-        <div>
-        <p class="similarTitle"><a href="#"><b>'.$showpainting->getPaintingTitle().'</b></a></p>
-        <div class="row">
-
-		<div class="col-md-4">
-
-        <button class="btn btn-primary btn-sm" type="button">
-			<span class="glyphicon glyphicon-info-sign"></span> View
-        </button>
-		</div>
-		<div class="col-md-4">
-
-        <button class="btn btn-success btn-sm" type="button">
-			<span class="glyphicon glyphicon-gift"></span> Wish
-        </button>
-		</div>
-		<div class="col-md-4">
-
-		<form action="add-to-cart.php" method="POST" class="add-button">
-			<button class="btn btn-info btn-sm add-button" type="submit">
-				  <input type="hidden" name="paintingID" value="'.$showpainting->getPaintingID().'" >
-
-			<span class="glyphicon glyphicon-shopping-cart"></span>Cart
-			</button>
-		</form>
-		</div>
-		</div>
-
-        </div>
-        </div>
-        </div>';
+    foreach ($getpainting as $showpainting) {
+		$painting = new Painting($showpainting->getPaintingID());
+		$painting->outputThumbnail();
     }
 }
 ?>
