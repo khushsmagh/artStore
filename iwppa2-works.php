@@ -46,7 +46,7 @@ $work = ViewWorks();
                                             </tr>
                                             <tr>
                                                 <th>Home:</th>
-                                                <td><a href="#"><?php echo $work->getGalleryName()?>,<?php echo $work->getGalleryCity()?></a></td>
+                                                <td><a href="gallery.php?gallery=<?php echo $work->getGalleryID()?>"><?php echo $work->getGalleryName()?>,<?php echo $work->getGalleryCity()?></a></td>
                                             </tr>
                                             <tr>
                                                 <th>Genres:</th>
