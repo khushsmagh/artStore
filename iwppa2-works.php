@@ -5,24 +5,37 @@ include ('includes/view-reviews.php');
 include('includes/header.inc.php');
 $work = ViewWorks();
 ?>
-
-                    <p>By <a href="#"><?php echo $work->getFirstName() , $work->getLastName() ?><!--Louise Elisabeth Lebrun--></a></p>
+					<h2><?php echo $work->getPaintingTitle(); ?></h2>
+                    <p>By <a href="#"><?php echo $work->getFirstName() , $work->getLastName() ?></a></p>
                     <div class="col-md-5">
-                        <img src="images/works/medium/<?php echo $work->getImageFileName() ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
+                        <img src="images/works/medium/<?php echo $work->getImageFileName(); ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
                     </div>
                     <div class="col-md-7">
                         <p>
-                            <?php echo $work->getExcerpt() ?>
+                            <?php echo $work->getExcerpt(); ?>
                              </p>
-                        <p class="price"><?php echo number_format($work->getCost(),2)?></p>
+                        <p class="price"><?php echo number_format($work->getCost(),2); ?></p>
 
-							<form action="add-to-cart.php" method="POST" class="add-button">
-								<button class="btn btn-lg btn-default" type="submit">
-								<input type="hidden" name="paintingID" value="<?php echo $work->getPaintingID(); ?>" >
-								<span class="glyphicon glyphicon-shopping-cart"></span>  Add to Shopping Cart
-								</button>
-							</form>
-
+						<div class="container">
+							<div class="row">
+			                    <div class="col-md-3">
+									<form action="add-to-cart.php" method="POST" class="add-button">
+										<button class="btn btn-lg btn-default" type="submit">
+										<input type="hidden" name="paintingID" value="<?php echo $work->getPaintingID(); ?>" >
+										<span class="glyphicon glyphicon-shopping-cart"></span>  Add to Shopping Cart
+										</button>
+									</form>
+								</div>
+			                    <div class="col-md-2">
+									<form action="add-to-cart.php" method="POST" class="add-button">
+										<button class="btn btn-lg btn-default" type="submit">
+										<input type="hidden" name="paintingID" value="<?php echo $work->getPaintingID(); ?>" >
+										<span class="glyphicon glyphicon-shopping-cart"></span>  Add to Shopping Cart
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
                         <p>&nbsp;</p>
                          <div id="panel_negative">
                             <div class="panel panel-default">
