@@ -1,4 +1,12 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if(!isset($_SESSION['Admin'])){
+	header("Location: includes/login-form.php");
+} else {
+
 $pageTitle = 'Admin Panel';
 include("includes/header.inc.php");
 
@@ -43,4 +51,4 @@ include("includes/header.inc.php");
     ?>
 </div>
 
-<?php include("includes/footer.inc.php");  ?>
+<?php include("includes/footer.inc.php"); } ?>
