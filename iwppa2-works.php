@@ -1,9 +1,11 @@
 <?php
-$pageTitle = 'Detail page';
 include ('includes/view-works.php');
 include ('includes/view-reviews.php');
-include('includes/header.inc.php');
 $work = ViewWorks();
+$pageTitle = $work->getPaintingTitle();
+
+include('includes/header.inc.php');
+
 ?>
 					<h2><?php echo $work->getPaintingTitle(); ?></h2>
                     <p>By <a href="#"><?php echo $work->getFirstName() , $work->getLastName() ?></a></p>
