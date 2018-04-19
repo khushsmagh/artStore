@@ -63,4 +63,13 @@ class Cart {
 		
 		return $totalPrice;
 	}
+
+	public function cartItemCount() {
+		$totalCount = 0;
+		foreach($this->cartContent as $cartItem) {
+			$totalCount++;
+		}
+		
+		return $totalCount;
+	}
 }

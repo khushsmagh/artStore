@@ -28,21 +28,26 @@ require_once('includes/customer.class.php');
 		if(is_numeric($_SESSION['CustId'])){
 			$customer = $_SESSION['CustId'];
 			$customer = new Customer($customer);
-			echo'<br>Your order will be shipped to:<br><br><div class="well">';
+			echo'<br><h4>Your order will be shipped to:</h4><div class="well">';
 			$customer->outputAddress();
 			echo'</div>';
 			$shippers = new TypesShippers($customer->getCountry());
 			$shippers = $shippers->getShippers();
 ?>
-			<form>
-<?php			foreach($shippers as $shipper) {
-					echo '<input type="radio" name="shipID" value="'.$shipper['shipperID'].'"> '.$shipper['shipperName'].'<br>';
-
-				//print_r($shipper);
-			}
+			<h4>select your shipping method:</h4>
+			<form action="place-order.php" method="post">
+<?php			$count = 0;
+				foreach($shippers as $shipper) {
+					echo '<input type="radio" ';
+					if($count == 0) echo 'checked ';
+					echo 'name="shipID" value="'.$shipper['shipperID'].'"> $'.number_format($shipper['shipperBaseFee'],2).' '.$shipper['shipperName'].' - '.$shipper['shipperDescription'].' ('.$shipper['shipperAvgTime'].')<br>';
+					$count++;
+				}
 ?>
+				<button type="submit" name="submit" class="btn btn-primary button2update " > Place Order <span class="glyphicon glyphicon-send"></span></button>
 
 			</form>
+
 <?php		}
 		
 ?>			

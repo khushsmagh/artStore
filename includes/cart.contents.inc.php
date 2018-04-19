@@ -1,6 +1,7 @@
 <?php
 			if(is_array($myCart->cartContent())){
 				if(count($myCart->cartContent()) > 0){
+				$cartTotal = $myCart->cartTotal();
 ?>
 				<div class="container-fluid cart">
 					<div class="row">
@@ -89,9 +90,11 @@
 <?php					}	
 ?>
 					</div>
+					<h4>Subtotal: $<?php echo number_format($cartTotal,2); ?></h4>
 					<br>
 					<a href="clear-cart.php" class="btn btn-danger" onclick="return confirm('This will empty your cart \n Are you sure?')"><span class="glyphicon glyphicon-trash"></span> empty cart </a>
-					<a href="checkout.php" class="btn btn-primary" ><span class="glyphicon glyphicon-arrow-right"></span> Checkout </a>
+					<a href="checkout.php" class="btn btn-primary" ><span class="glyphicon glyphicon-arrow-right"></span> Checkout </a> 
+
 
 					<br>
 					<script src="js/accordion.js"></script>

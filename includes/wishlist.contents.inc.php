@@ -56,7 +56,7 @@
 
 								</div>
 								<div class="col-md-4">
-								<a href="delete-wishlist-item.php?wishlistItem=<?php echo $rowCount; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><span class="glyphicon glyphicon-trash"></span> delete</a>
+								<a href="delete-wishlist-item.php?wishlistItem=<?php echo $rowCount; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><span class="glyphicon glyphicon-trash"></span> Remove from List</a>
 
 								</div>
 							</div>
@@ -66,7 +66,6 @@
 					</div>
 					<br>
 					<a href="clear-wishlist.php" class="btn btn-danger" onclick="return confirm('This will empty your wish list \n Are you sure?')"><span class="glyphicon glyphicon-trash"></span> empty wish list </a>
-					<a href="checkout.php" class="btn btn-primary" ><span class="glyphicon glyphicon-arrow-right"></span> Checkout </a>
 
 					<br>
 					<script src="js/accordion.js"></script>

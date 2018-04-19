@@ -41,9 +41,12 @@ class Painting {
 						<a href="iwppa2-works.php?PaintingID=<?php echo $this->paintingID; ?>" class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-info-sign"></span> View</a>
 						</div>
 						<div class="col-md-4">
-							<button class="btn btn-success btn-sm" type="button">
-							<span class="glyphicon glyphicon-gift"></span> Wish
-							</button>
+							<form action="add-to-wishlist.php" method="POST" class="add-button">
+								<button class="btn btn-success btn-sm" type="submit">
+								<input type="hidden" name="paintingID" value="<?php echo $this->paintingID; ?>" >
+								<span class="glyphicon glyphicon-gift"></span>Wish
+								</button>
+							</form>
 						</div>
 						<div class="col-md-4">
 							<form action="add-to-cart.php" method="POST" class="add-button">

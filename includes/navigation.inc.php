@@ -9,7 +9,7 @@ $page = $URL[count($URL)-1];
                         <div class="container">
                             <div class="collapse navbar-collapse" id="navbar-2">
                                 <ul class="nav navbar-nav">
-                                    <li class="<?php if($page == 'index.php') echo 'active'; ?>"><a href="iwppa2-index.php">Home</a></li>
+                                    <li class="<?php if($page == 'index.php') echo 'active'; ?>"><a href="index.php">Home</a></li>
                                     <li class="<?php if($page == 'iwppa2-about.php') echo 'active'; ?>"><a href="iwppa2-about.php">About Us</a></li>
                                     <li class="<?php if($page == 'search.php') echo 'active'; ?>"> <a href="search.php">Advanced Search</a></li>
                                     <li class="dropdown <?php if(in_array($page, array('iwppa2-works.php', 'iwppa2-artists.php', 'single-artist.php', 
