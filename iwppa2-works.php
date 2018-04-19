@@ -8,7 +8,7 @@ include('includes/header.inc.php');
 
 ?>
 					<h2><?php echo $work->getPaintingTitle(); ?></h2>
-                    <p>By <a href="#"><?php echo $work->getFirstName() , $work->getLastName() ?></a></p>
+                    <p>By <a href="#"><?php echo $work->getFirstName().' '.$work->getLastName(); ?></a></p>
                     <div class="col-md-5">
                         <img src="images/works/medium/<?php echo $work->getImageFileName(); ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
                     </div>
@@ -20,19 +20,19 @@ include('includes/header.inc.php');
 
 						<div class="container">
 							<div class="row">
-			                    <div class="col-md-3">
-									<form action="add-to-cart.php" method="POST" class="add-button">
-										<button class="btn btn-lg btn-default" type="submit">
+			                    <div class="col-md-2">
+									<form action="add-to-wishlist.php" method="POST" class="add-button">
+										<button class="btn btn-lg btn-primary" type="submit">
 										<input type="hidden" name="paintingID" value="<?php echo $work->getPaintingID(); ?>" >
-										<span class="glyphicon glyphicon-shopping-cart"></span>  Add to Shopping Cart
+										<span class="glyphicon glyphicon-gift"></span>  Add to Wishlist
 										</button>
 									</form>
 								</div>
 			                    <div class="col-md-2">
 									<form action="add-to-cart.php" method="POST" class="add-button">
-										<button class="btn btn-lg btn-default" type="submit">
+										<button class="btn btn-lg btn-primary" type="submit">
 										<input type="hidden" name="paintingID" value="<?php echo $work->getPaintingID(); ?>" >
-										<span class="glyphicon glyphicon-shopping-cart"></span>  Add to Shopping Cart
+										<span class="glyphicon glyphicon-shopping-cart"></span>  Add to Cart
 										</button>
 									</form>
 								</div>
