@@ -58,7 +58,6 @@ if(isset($_GET["search"])){
 
                 if($count < 1){
                     echo '<h2> "No results found" </h2>';
-                    exit();
                 }
                 else{
 
@@ -93,7 +92,6 @@ if(isset($_GET["search"])){
 
             if($count < 1){
                 echo '<h2> "No results found" </h2>';
-                exit();
             }
             else{
 
@@ -130,7 +128,6 @@ if(isset($_GET["search"])){
 
             if($count < 1){
                 echo '<h2> "No results found" </h2>';
-                exit();
             }
             else{
 
