@@ -15,10 +15,14 @@ $work = ViewWorks();
                             <?php echo $work->getExcerpt() ?>
                              </p>
                         <p class="price"><?php echo number_format($work->getCost(),2)?></p>
-                        <div class="btn-group">
-                            <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-gift"></span> Add to Wish List</a></button>
-                            <button class="btn btn-lg btn-default"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Shopping Cart</a></button>
-                        </div>
+
+							<form action="add-to-cart.php" method="POST" class="add-button">
+								<button class="btn btn-lg btn-default" type="submit">
+								<input type="hidden" name="paintingID" value="<?php echo $work->getPaintingID(); ?>" >
+								<span class="glyphicon glyphicon-shopping-cart"></span>  Add to Shopping Cart
+								</button>
+							</form>
+
                         <p>&nbsp;</p>
                          <div id="panel_negative">
                             <div class="panel panel-default">
