@@ -16,11 +16,7 @@ if(is_numeric($_SESSION['CustId'])){
 
 $pageTitle = 'Update User';
 include("includes/header.inc.php");
-
 ?>
-<?php echo $customer->getCustomerID(); ?>
- 	
-
 
 <div class="container">
     <div class="row">
@@ -61,39 +57,39 @@ include("includes/header.inc.php");
                         <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                             <select name="city" class="form-control">
                                 <option value=""> Please select your city</option>
-                                <option>Calgary</option>
-                                <option>Vancouver</option>
-                                <option>Montreal</option>
-                                <option>Los Angeles</option>
-                                <option>Boston</option>
-                                <option>New York</option>
-                                <option>New Jersey</option>
-                                <option>Kentucky</option>
-                                <option>Quebec</option>
-                                <option>Edmonton</option>
-                                <option>Saskatoon</option>
-                                <option>Guelph</option>
-                                <option>Surrey</option>
-                                <option>Chicago</option>
-                                <option>Seattle</option>
-                                <option>Denver</option>
-                                <option>Detroit</option>
-                                <option>San Francisco</option>
-                                <option>Houston</option>
-                                <option>Atlanta</option>
-                                <option>Dallas</option>
-                                <option>Seattle</option>
-                                <option>Kansas</option>
-                                <option>San Jose</option>
-                                <option>California</option>
-                                <option>Texas</option>
-                                <option>Minneapolis</option>
-                                <option>Menphis</option>
-                                <option>Las Vegas</option>
-                                <option>Cincinnati</option>
-                                <option>Madison</option>
-                                <option>Buffalo</option>
-                                <option>Waterloo</option>
+								<option<?php if ($customer->getCity() == 'Calgary') echo ' selected'; ?>>Calgary</option>
+								<option<?php if ($customer->getCity() == 'Vancouver') echo ' selected'; ?>>Vancouver</option>
+								<option<?php if ($customer->getCity() == 'Montreal') echo ' selected'; ?>>Montreal</option>
+								<option<?php if ($customer->getCity() == 'Los Angeles') echo ' selected'; ?>>Los Angeles</option>
+								<option<?php if ($customer->getCity() == 'Boston') echo ' selected'; ?>>Boston</option>
+								<option<?php if ($customer->getCity() == 'New York') echo ' selected'; ?>>New York</option>
+								<option<?php if ($customer->getCity() == 'New Jersey') echo ' selected'; ?>>New Jersey</option>
+								<option<?php if ($customer->getCity() == 'Kentucky') echo ' selected'; ?>>Kentucky</option>
+								<option<?php if ($customer->getCity() == 'Quebec') echo ' selected'; ?>>Quebec</option>
+								<option<?php if ($customer->getCity() == 'Edmonton') echo ' selected'; ?>>Edmonton</option>
+								<option<?php if ($customer->getCity() == 'Saskatoon') echo ' selected'; ?>>Saskatoon</option>
+								<option<?php if ($customer->getCity() == 'Guelph') echo ' selected'; ?>>Guelph</option>
+								<option<?php if ($customer->getCity() == 'Surrey') echo ' selected'; ?>>Surrey</option>
+								<option<?php if ($customer->getCity() == 'Chicago') echo ' selected'; ?>>Chicago</option>
+								<option<?php if ($customer->getCity() == 'Seattle') echo ' selected'; ?>>Seattle</option>
+								<option<?php if ($customer->getCity() == 'Denver') echo ' selected'; ?>>Denver</option>
+								<option<?php if ($customer->getCity() == 'Detroit') echo ' selected'; ?>>Detroit</option>
+								<option<?php if ($customer->getCity() == 'San Francisco') echo ' selected'; ?>>San Francisco</option>
+								<option<?php if ($customer->getCity() == 'Houston') echo ' selected'; ?>>Houston</option>
+								<option<?php if ($customer->getCity() == 'Atlanta') echo ' selected'; ?>>Atlanta</option>
+								<option<?php if ($customer->getCity() == 'Dallas') echo ' selected'; ?>>Dallas</option>
+								<option<?php if ($customer->getCity() == 'Seattle') echo ' selected'; ?>>Seattle</option>
+								<option<?php if ($customer->getCity() == 'Kansas') echo ' selected'; ?>>Kansas</option>
+								<option<?php if ($customer->getCity() == 'San Jose') echo ' selected'; ?>>San Jose</option>
+								<option<?php if ($customer->getCity() == 'California') echo ' selected'; ?>>California</option>
+								<option<?php if ($customer->getCity() == 'Texas') echo ' selected'; ?>>Texas</option>
+								<option<?php if ($customer->getCity() == 'Minneapolis') echo ' selected'; ?>>Minneapolis</option>
+								<option<?php if ($customer->getCity() == 'Menphis') echo ' selected'; ?>>Menphis</option>
+								<option<?php if ($customer->getCity() == 'Las Vegas') echo ' selected'; ?>>Las Vegas</option>
+								<option<?php if ($customer->getCity() == 'Cincinnati') echo ' selected'; ?>>Cincinnati</option>
+								<option<?php if ($customer->getCity() == 'Madison') echo ' selected'; ?>>Madison</option>
+								<option<?php if ($customer->getCity() == 'Buffalo') echo ' selected'; ?>>Buffalo</option>
+								<option<?php if ($customer->getCity() == 'Waterloo') echo ' selected'; ?>>Waterloo</option>
                             </select>
                         </div>
                     </div>
