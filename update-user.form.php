@@ -1,8 +1,8 @@
 <?php
+$pageTitle = 'Update User';
 
 include("includes/header.inc.php");
 ?>
-    <link href="bootstrap-3.2.0-dist/css/Common.css" type="text/css" rel="stylesheet">
 <div class="container">
     <div class="row">
         <div class="formConatiner-update">

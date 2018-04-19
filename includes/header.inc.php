@@ -49,11 +49,6 @@ $myWishlist = new Wishlist();
                                             echo '<li><a href="update-user.form.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>';
                                         } ?>
                                         <?php if(isset($_SESSION['Admin'])){
-                                            echo '<li><form style="padding-top: 10px;" action="includes/logout.php" method="POST">
-                                            <button class="btn btn-success" type="submit" name="submit">Logout</button>
-                                        </form></li>';
-                                        } ?>
-                                        <?php if(isset($_SESSION['Admin'])){
                                             echo '<li><a href="admin.index.php"><span class="glyphicon glyphicon-user"></span> Users List</a></li>';
                                         } ?>
                                         <li><a href="wishlist.php"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>

@@ -42,6 +42,7 @@ include("config.database.php");
             		// if succesful, it redirects user to the website
 					$_SESSION['Admin'] = $row->UserName;
 					$_SESSION['welcome'] = $welcomeAdmin;
+					$_SESSION['CustId'] = $row->CustomerID;
 
 					header("Location:../admin.index.php");
 					exit();
