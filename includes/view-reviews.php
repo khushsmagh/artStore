@@ -18,6 +18,7 @@ function ViewReviews()
         $sql = "select *  from reviews
              where PaintingID = $getPaintingID ";
         $result = $connection->query($sql);
+		$rev = 0;
         while($row = $result->fetch()) {
             $arev = new Review($row['RatingID'], $row['PaintingID'], $row['ReviewDate'], $row['Rating'], $row['Comment']);
             $rev[] = $arev;
@@ -32,7 +33,8 @@ function OutputReview()
 {
 
     $rev = ViewReviews();
-    foreach ($rev as $showrev)
+    if(is_array($rev)){
+	foreach ($rev as $showrev)
     {
         $count = 0;
         echo '
@@ -51,7 +53,7 @@ echo'<div >'.$showrev->getReviewdate().'</div>
     </a>
     </div>
     </div>';
-    }
+    }}
 }
 
 ?>
