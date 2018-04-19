@@ -8,7 +8,7 @@ include('includes/header.inc.php');
 
 ?>
 					<h2><?php echo $work->getPaintingTitle(); ?></h2>
-                    <p>By <a href="#"><?php echo $work->getFirstName().' '.$work->getLastName(); ?></a></p>
+                    <p>By <a href="single-artist.php?ArtistID=<?php echo $work->getArtistID(); ?>"><?php echo $work->getFirstName().' '.$work->getLastName(); ?></a></p>
                     <div class="col-md-5">
                         <img src="images/works/medium/<?php echo $work->getImageFileName(); ?>.jpg" class="img-thumbnail img-responsive" alt="Self-portrait in a Straw Hat"/>
                     </div>
