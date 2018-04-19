@@ -49,8 +49,43 @@ class Customer {
 			 $this->Country;
 	}
 
-	public function getCountry() {
+	public function getCustomerID() { 
+		return $this->CustomerID;
+	}
+	
+	public function getFirstName() { 
+		return $this->FirstName;
+	}
+	
+	public function getLastName() { 
+		return $this->LastName;
+	}
+	
+	public function getAddress() { 
+		return $this->Address;
+	}
+	
+	public function getCity() { 
+		return $this->City;
+	}
+	
+	public function getRegion() { 
+		return $this->Region;
+	}
+	
+	public function getCountry() { 
 		return $this->Country;
 	}
-
+	
+	public function getPostal() { 
+		return $this->Postal;
+	}	
+	
+	public function getPhone() { 
+		return $this->Phone;
+	}
+	
+	public function getEmail() { 
+		return $this->Email;
+	}		
 }

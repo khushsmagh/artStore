@@ -18,6 +18,10 @@ $pageTitle = 'Update User';
 include("includes/header.inc.php");
 
 ?>
+<?php echo $customer->getCustomerID(); ?>
+ 	
+
+
 <div class="container">
     <div class="row">
         <div class="formConatiner-update">
@@ -29,7 +33,7 @@ include("includes/header.inc.php");
                     <label class="col-md-2">First Name</label>
                     <div class="col-md-6">
                         <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="firstName" placeholder="First Name" class="form-control">
+                            <input type="text" name="firstName" placeholder="First Name" class="form-control" value="<?php echo $customer->getFirstName(); ?>">
                         </div>
                     </div>
                 </div>
@@ -37,7 +41,7 @@ include("includes/header.inc.php");
                     <label class="col-md-2">Last Name</label>
                     <div class="col-md-6">
                         <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="lastName" placeholder="Last Name" class="form-control">
+                            <input type="text" name="lastName" placeholder="Last Name" class="form-control" value="<?php echo $customer->getLastName(); ?>">
                         </div>
                     </div>
                 </div>
@@ -46,7 +50,7 @@ include("includes/header.inc.php");
                     <label class="col-md-2">Address</label>
                     <div class="col-md-6">
                         <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            <input type="text" name="address" placeholder="Address" class="form-control">
+                            <input type="text" name="address" placeholder="Address" class="form-control"  value="<?php echo $customer->getAddress(); ?>">
                         </div>
                     </div>
                 </div>
@@ -99,7 +103,7 @@ include("includes/header.inc.php");
                     <label class="col-md-2">Region</label>
                     <div class="col-md-6">
                         <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <input type="text" name="region" placeholder="Region" class="form-control">
+                            <input type="text" name="region" placeholder="Region" class="form-control" value="<?php echo $customer->getRegion(); ?>">
                         </div>
                     </div>
                 </div>
@@ -110,8 +114,8 @@ include("includes/header.inc.php");
                         <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                             <select name="country" class="form-control">
                                 <option value="">Please select your country</option>
-                                <option>Canada</option>
-                                <option>USA</option>
+                                <option <?php if ($customer->getCountry() == 'Canada') echo 'selected'?>>Canada</option>
+                                <option <?php if ($customer->getCountry() == 'USA') echo 'selected'?>>USA</option>
                             </select>
                         </div>
                     </div>
@@ -121,7 +125,7 @@ include("includes/header.inc.php");
                     <label class="col-md-2">Postal Code</label>
                     <div class="col-md-6">
                         <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            <input type="text" name="postal" placeholder="Postal Code" class="form-control">
+                            <input type="text" name="postal" placeholder="Postal Code" class="form-control" value="<?php echo $customer->getPostal(); ?>">
                         </div>
                     </div>
                 </div>
@@ -130,7 +134,7 @@ include("includes/header.inc.php");
                     <label class="col-md-2">Phone</label>
                     <div class="col-md-6">
                         <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input type="text" name="phone" placeholder="###-###-####" class="form-control">
+                            <input type="text" name="phone" placeholder="###-###-####" class="form-control" value="<?php echo $customer->getPhone(); ?>">
                         </div>
                     </div>
                 </div>
