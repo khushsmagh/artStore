@@ -54,7 +54,7 @@ session_start();
                         <br>
                         <button name="submit" type="submit" class="btn btn-primary form-control" >Login  <span class="glyphicon glyphicon-check"></span></button><p></p>
                     </form>
-                    <a class="btn btn-danger form-control" href="../iwppa2-index.php"> Cancel <span class="glyphicon glyphicon-remove-sign"></span></a>
+                    <a class="btn btn-danger form-control" href="../index.php"> Cancel <span class="glyphicon glyphicon-remove-sign"></span></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12"></div>

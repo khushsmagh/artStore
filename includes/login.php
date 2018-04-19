@@ -54,7 +54,7 @@ include("config.database.php");
 					$_SESSION['CustId'] = $row->CustomerID};
 					$_SESSION['welcome'] = $welcome;
 
-					header("Location:../iwppa2-index.php");
+					header("Location:../index.php");
 			}	
 		}
 	 }
