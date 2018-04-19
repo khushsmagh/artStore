@@ -18,7 +18,7 @@ function ViewReviews()
         $sql = "select *  from reviews
              where PaintingID = $getPaintingID ";
         $result = $connection->query($sql);
-		$rev = 0;
+		//$rev = 0;
         while($row = $result->fetch()) {
             $arev = new Review($row['RatingID'], $row['PaintingID'], $row['ReviewDate'], $row['Rating'], $row['Comment']);
             $rev[] = $arev;
