@@ -2,7 +2,7 @@
 Class Works{
 
     private $paintingID;
-    private $imageFIleName;
+    private $imageFileName;
     private $paintingTitle;
     private $description;
     private $excerpt;
@@ -24,7 +24,7 @@ Class Works{
     ,$galleryName , $galleryCity)
     {
         $this->paintingID = $paintingID;
-        $this->imageFIleName = $imageFileName;
+        $this->imageFileName = $imageFileName;
         $this->paintingTitle = $paintingTitle;
         $this->description = $description;
         $this->excerpt = $excerpt;
@@ -50,9 +50,9 @@ Class Works{
     /**
      * @return mixed
      */
-    public function getImageFIleName()
+    public function getImageFileName()
     {
-        return $this->imageFIleName;
+        return $this->imageFileName;
     }
 
     /**

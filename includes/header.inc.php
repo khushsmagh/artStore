@@ -21,7 +21,8 @@ $myCart = new Cart();
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Palanquin" rel="stylesheet">
         <link href="iwppa1.css" rel="stylesheet">
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link href="css/Common.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     </head>
     <body>
         <header>
