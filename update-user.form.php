@@ -1,7 +1,22 @@
 <?php
-$pageTitle = 'Update User';
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
+if(!isset($_SESSION['CustId'])){
+	header("Location: includes/login-form.php");
+} else {
+
+require_once('includes/customer.class.php');
+
+if(is_numeric($_SESSION['CustId'])){
+	$customer = $_SESSION['CustId'];
+	$customer = new Customer($customer);
+}
+
+$pageTitle = 'Update User';
 include("includes/header.inc.php");
+
 ?>
 <div class="container">
     <div class="row">
@@ -137,4 +152,4 @@ include("includes/header.inc.php");
     </div>
 </div>
 <br>
-	<?php include("includes/footer.inc.php");?>
+<?php include("includes/footer.inc.php");}?>
