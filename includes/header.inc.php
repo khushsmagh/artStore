@@ -7,7 +7,9 @@ require_once('includes/config.database.php');
 require_once('includes/config.googleAPI.php');
 require_once('includes/query.class.php');
 require_once('includes/cart.class.php');
+require_once('includes/wishlist.class.php');
 $myCart = new Cart();
+$myWishlist = new Wishlist();
 
 ?>
 <!DOCTYPE html>
@@ -54,7 +56,7 @@ $myCart = new Cart();
                                         <?php if(isset($_SESSION['Admin'])){
                                             echo '<li><a href="admin.index.php"><span class="glyphicon glyphicon-user"></span> Users List</a></li>';
                                         } ?>
-                                        <li><a href="#"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
+                                        <li><a href="wishlist.php"><span class="glyphicon glyphicon-gift"></span> Wish List</a></li>
                                         <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
                                         <li><a href="checkout.php"><span class="glyphicon glyphicon-arrow-right"></span> Checkout</a></li>
                                     </ul>
