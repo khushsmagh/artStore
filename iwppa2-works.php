@@ -16,10 +16,10 @@ include('includes/header.inc.php');
                         <p>
                             <?php echo $work->getExcerpt(); ?>
                              </p>
-                        <p class="price"><?php echo number_format($work->getCost(),2); ?></p>
+                        <p class="price">$ <?php echo number_format($work->getCost(),2); ?></p>
 
 						<div class="container">
-							<div class="row">
+							<div class="main row">
 			                    <div class="col-md-2">
 									<form action="add-to-wishlist.php" method="POST" class="add-button">
 										<button class="btn btn-lg btn-primary" type="submit">
@@ -88,6 +88,7 @@ include('includes/header.inc.php');
                             </div>
                         </div>
                     </div>
+					<div class="clearfix"></div>
                     <p>&nbsp;</p>
                     <h3>Similar Products </h3>
 <div class = "row fix">
@@ -113,6 +114,7 @@ include('includes/header.inc.php');
     </form>
 </div>
 <br>
+
 <p></p>
 <h4>View Review</h4>
 <?php echo OutputReview();?>

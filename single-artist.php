@@ -12,11 +12,6 @@ $row = ViewSingleArtist();
             <div class="col-md-6">
                 <p>
                    <?php echo $row->getDetails() ?></p>
-                <div class="btn-group">
-                    <button class="btn btn-default" type="button" >
-                        <span style="color:rgb(0, 143, 190)"><span class="glyphicon glyphicon-gift"></span> Add to Favorites List</span>
-                    </button>
-                </div>
                 <p>&nbsp;</p>
                 <div class="panel panel-default">
                     <div class="panel-heading">Artist Details</div>
@@ -33,7 +28,7 @@ $row = ViewSingleArtist();
                         </tr>
                         <tr>
                             <th>More info:</th>
-                            <td><?php echo $row->getArtistlink()?></td>
+                            <td><a href="<?php echo $row->getArtistlink(); ?>"><?php echo $row->getArtistlink(); ?></a></td>
                         </tr>
                     </table>
                 </div>
